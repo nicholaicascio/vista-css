@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vista.css — a Windows Vista Aero design system</title>
+    <link rel="stylesheet" href="aurora.css?v=<%= cacheBust %>" />
+    <link rel="stylesheet" href="Vista.css?v=<%= cacheBust %>" />
+    <link rel="stylesheet" href="docs.css?v=<%= cacheBust %>" />
+  </head>
+  <body>
+    <main class="docs-page">
+      <header class="docs-header">
+        <h1>vista.css</h1>
+        <p class="docs-tagline">
+          A design system for building faithful recreations of the Windows Vista
+          Aero interface. No JavaScript — just semantic HTML and one stylesheet.
+        </p>
+        <pre
+          class="docs-install"
+        ><code>&lt;link rel="stylesheet" href="https://unpkg.com/vista.css"&gt;</code></pre>
+        <p class="docs-version">v<%= version %></p>
+      </header>
+
+      <section class="docs-section">
+        <h2>Window</h2>
+        <p>
+          The frame is translucent Aero glass: it blurs the page behind it, so
+          it needs something — anything — to sit on. The title bar carries the
+          window controls; the client area (<code>.window-body</code>) stays
+          opaque, exactly as Vista rendered it.
+        </p>
+        <%- example(`
+          <div class="window" style="width: 320px">
+            <div class="title-bar">
+              <div class="title-bar-text">My First Vista Program</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>Hello, Aero!</p>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Window controls</h2>
+        <p>
+          Control buttons are keyed off their <code>aria-label</code>, so they
+          stay accessible and order-independent. Hover glows blue; Close glows
+          red. Use <code>Restore</code> for a maximized window.
+        </p>
+        <%- example(`
+          <div class="window" style="width: 320px">
+            <div class="title-bar">
+              <div class="title-bar-text">All four controls</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Restore"></button>
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>Hover each button.</p>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Status bar</h2>
+        <p>
+          A row of glass fields pinned to the bottom of the window.
+        </p>
+        <%- example(`
+          <div class="window" style="width: 360px">
+            <div class="title-bar">
+              <div class="title-bar-text">Documents</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="height: 84px">
+              <p>3 items selected</p>
+            </div>
+            <div class="status-bar">
+              <p class="status-bar-field">Ready</p>
+              <p class="status-bar-field">3 objects</p>
+              <p class="status-bar-field">1.2 MB</p>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Requirements</h2>
+        <p>
+          The glass effect uses <code>backdrop-filter</code>, supported by every
+          current browser. The frame is transparent, so place windows over a
+          background — a photo, gradient, or the window of another app.
+          <code>autoprefixer</code> adds the <code>-webkit-</code> prefix at
+          build time.
+        </p>
+      </section>
+
+      <section class="docs-section">
+        <h2>Roadmap</h2>
+        <p>
+          Buttons and form controls (M3) · tabs, group boxes, tree views,
+          progress bars and scrollbars (M4) · menus, toolbars and balloon
+          tooltips (M5) · the Aero taskbar and Start orb (M6).
+        </p>
+      </section>
+
+      <footer class="docs-footer">
+        <p>
+          Inspired by <a href="https://jdan.github.io/98.css/">98.css</a> and
+          <a href="https://botoxparty.github.io/XP.css/">XP.css</a>, both MIT
+          licensed. vista.css is MIT too.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

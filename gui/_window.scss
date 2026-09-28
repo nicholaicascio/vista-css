@@ -1,0 +1,43 @@
+/*-------------------------------------------*\
+    Window (structural base)
+\*-------------------------------------------*/
+
+.window {
+  font-size: var(--font-size);
+  color: var(--text);
+}
+
+.window-body {
+  margin: var(--element-spacing);
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-bar-text {
+  flex: 0 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-bar-controls {
+  display: flex;
+  flex: 0 0 auto;
+
+  button {
+    display: block;
+    padding: 0;
+  }
+}
+
+.status-bar {
+  display: flex;
+}
+
+.status-bar-field {
+  flex-grow: 1;
+}

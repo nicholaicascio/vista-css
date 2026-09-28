@@ -1,0 +1,64 @@
+/*-------------------------------------------*\
+    Variables — Aero
+\*-------------------------------------------*/
+
+:root {
+  /* Text */
+  --text: #0a0a0a;
+  --text-muted: #5a5a5a;
+  --accent-text: #ffffff;
+
+  /* Surfaces. In Aero the frame is glass but the client area stays opaque. */
+  --surface: #f0f0f0;
+  --surface-alt: #ffffff;
+
+  /* Aero accent blue */
+  --accent: #3d8bd4;
+  --accent-dark: #0a5bc4;
+  --accent-glow: rgba(96, 180, 255, 0.85);
+
+  /* Glass */
+  --glass-blur: 30px;
+  --glass-saturate: 1.7;
+  --glass-tint: rgba(22, 32, 44, 0.44);
+  --glass-tint-strong: rgba(26, 38, 52, 0.6);
+  --glass-rim: rgba(255, 255, 255, 0.45);
+  --glass-sheen: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0) 58%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
+
+  /* Title bar */
+  --title-bar-height: 28px;
+  --title-bar-text: #ffffff;
+  --title-bar-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(0, 0, 0, 0.16) 52%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  --title-bar-shadow: 0 0 6px rgba(0, 0, 0, 0.9), 0 1px 1px rgba(0, 0, 0, 0.85);
+
+  /* Window control buttons */
+  --window-control-width: 22px;
+  --window-control-height: 19px;
+  --control-surface: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(255, 255, 255, 0.02) 52%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  --control-border: rgba(255, 255, 255, 0.55);
+  --control-hover-glow: rgba(120, 195, 255, 0.9);
+  --control-close-glow: rgba(245, 110, 90, 0.95);
+
+  /* Status bar */
+  --status-bar-bg: rgba(255, 255, 255, 0.2);
+  --status-field-bg: rgba(255, 255, 255, 0.35);
+}

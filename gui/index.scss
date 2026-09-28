@@ -1,0 +1,26 @@
+/**
+ * GUI.css
+ * The theme-agnostic core of vista.css.
+ *
+ * Component partials describe structure and the variable contract; the
+ * `themes/` directories supply the actual look. See ../themes/aero.
+ *
+ * Inspired by 98.css by Jordan Scales (jdan) and XP.css by Adam Hammad
+ * (botoxparty), both MIT licensed.
+ */
+
+@import "_variables.scss";
+@import "_fonts.scss";
+@import "_global.scss";
+@import "_buttons.scss";
+@import "_forms.scss";
+@import "_window.scss";
+@import "_treeview.scss";
+@import "_groupbox.scss";
+@import "_tabs.scss";
+@import "_progressbar.scss";
+@import "_scrollbar.scss";
+@import "_menus.scss";
+@import "_toolbar.scss";
+@import "_tooltips.scss";
+@import "_taskbar.scss";

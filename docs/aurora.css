@@ -1,0 +1,44 @@
+/*-------------------------------------------*\
+    Aurora
+
+    An original, gradient-only nod to the Windows Vista "Aurora" wallpaper.
+    It exists so the translucent Aero glass in the docs has something to blur.
+    No image assets, no copyrighted material.
+\*-------------------------------------------*/
+
+html {
+  background-color: #04131c;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #04131c;
+  background-image:
+    /* horizon glow */
+    radial-gradient(
+      120% 80% at 50% 118%,
+      rgba(150, 235, 190, 0.55) 0%,
+      rgba(60, 150, 140, 0.28) 35%,
+      rgba(0, 0, 0, 0) 62%
+    ),
+    /* left aurora ribbon */
+    radial-gradient(
+      70% 55% at 22% 28%,
+      rgba(70, 200, 150, 0.32) 0%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    /* cool right ribbon */
+    radial-gradient(
+      65% 50% at 82% 20%,
+      rgba(70, 140, 210, 0.3) 0%,
+      rgba(0, 0, 0, 0) 62%
+    ),
+    /* upper green wash */
+    radial-gradient(
+      90% 60% at 60% 0%,
+      rgba(40, 120, 110, 0.28) 0%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    linear-gradient(180deg, #04131c 0%, #072230 45%, #04161e 100%);
+  background-attachment: fixed;
+}

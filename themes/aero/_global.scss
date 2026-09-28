@@ -1,0 +1,13 @@
+/*-------------------------------------------*\
+    Global — Aero
+\*-------------------------------------------*/
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-dark);
+  color: var(--accent-text);
+}

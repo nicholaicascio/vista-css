@@ -1,0 +1,14 @@
+/*-------------------------------------------*\
+    Buttons (structural base)
+
+    Visual styling lives in themes/aero/_buttons.scss.
+\*-------------------------------------------*/
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}

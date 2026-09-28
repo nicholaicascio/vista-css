@@ -1,0 +1,25 @@
+/**
+ * Aero theme for vista.css
+ *
+ * The Windows Vista "Aero" skin: translucent glass chrome, glossy controls,
+ * soft blue glows and Segoe UI. Overrides the gui/ contract.
+ *
+ * Inspired by XP.css by Adam Hammad (botoxparty) and 98.css by Jordan Scales
+ * (jdan), both MIT licensed.
+ */
+
+@import "../../gui/index.scss";
+@import "_variables.scss";
+@import "_global.scss";
+@import "_window.scss";
+@import "_buttons.scss";
+@import "_forms.scss";
+@import "_groupbox.scss";
+@import "_tabs.scss";
+@import "_treeview.scss";
+@import "_progressbar.scss";
+@import "_scrollbar.scss";
+@import "_menus.scss";
+@import "_toolbar.scss";
+@import "_tooltips.scss";
+@import "_taskbar.scss";

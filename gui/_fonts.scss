@@ -1,0 +1,8 @@
+/*-------------------------------------------*\
+    Fonts
+
+    Vista introduced Segoe UI. It is proprietary, so vista.css uses the system
+    stack (declared via --sans-serif in _variables.scss) instead of bundling a
+    font file. Nothing ships here; this partial exists to keep parity with the
+    98.css / XP.css structure and as a home for optional @font-face overrides.
+\*-------------------------------------------*/

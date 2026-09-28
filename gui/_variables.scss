@@ -1,0 +1,42 @@
+/*-------------------------------------------*\
+    Variables (contract)
+
+    Themes override these. Values here are neutral fallbacks so that GUI.css
+    renders sensibly on its own and so components never reference an undefined
+    custom property.
+\*-------------------------------------------*/
+
+:root {
+  /* Typography */
+  --sans-serif: "Segoe UI", "Segoe UI Variable Text", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-size: 12px;
+
+  /* Color (neutral fallbacks; the Aero theme supplies the real palette) */
+  --text: #000000;
+  --text-muted: #4a4a4a;
+  --surface: #f0f0f0;
+  --surface-alt: #ffffff;
+  --accent: #3d8bd4;
+  --accent-text: #ffffff;
+
+  /* Spacing */
+  --element-spacing: 8px;
+  --grouped-button-spacing: 4px;
+  --grouped-element-spacing: 6px;
+
+  /* Sizing */
+  --title-bar-height: 28px;
+  --window-control-width: 22px;
+  --window-control-height: 19px;
+  --checkbox-size: 13px;
+  --radio-size: 13px;
+
+  /* Radii */
+  --radius: 3px;
+  --window-radius: 7px;
+
+  /* Focus */
+  --focus-ring-color: var(--accent);
+  --focus-ring-width: 1px;
+}

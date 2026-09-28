@@ -1,0 +1,18 @@
+# Anything not whitelisted by the "files" field in package.json is excluded
+# from the published tarball. These rules keep dev-only files out even if that
+# field changes.
+
+node_modules/
+
+# Dev tooling
+build.js
+server.js
+.editorconfig
+.gitignore
+.npmignore
+
+# Local docs and agent/browser scratch
+docs/
+.openchamber/
+.playwright-mcp/
+*.log

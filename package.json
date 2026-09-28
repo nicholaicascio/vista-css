@@ -1,0 +1,66 @@
+{
+  "name": "vista.css",
+  "version": "0.1.0",
+  "description": "A design system for building faithful recreations of the Windows Vista Aero UI.",
+  "main": "dist/Vista.css",
+  "style": "dist/Vista.css",
+  "files": [
+    "dist/Vista.css",
+    "dist/Vista.css.map",
+    "dist/GUI.css",
+    "dist/GUI.css.map",
+    "gui",
+    "themes",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js",
+    "prepublishOnly": "npm run build",
+    "deploy:docs": "npm run build && gh-pages -d dist",
+    "release": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholaicascio/vista-css.git"
+  },
+  "keywords": [
+    "css",
+    "design-system",
+    "windows-vista",
+    "windows-aero",
+    "aero",
+    "gui",
+    "vista"
+  ],
+  "author": "nicholaicascio <lordcohliani@gmail.com> (https://github.com/nicholaicascio)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholaicascio/vista-css/issues"
+  },
+  "homepage": "https://nicholaicascio.github.io/vista-css/",
+  "engines": {
+    "node": ">=18"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Safari >= 15",
+    "not dead"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "chokidar": "^5.0.0",
+    "dedent": "^1.7.2",
+    "ejs": "^6.0.1",
+    "gh-pages": "^6.3.0",
+    "highlight.js": "^11.12.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.5.28",
+    "postcss-import": "^17.0.0",
+    "postcss-nested": "^8.0.1"
+  }
+}
