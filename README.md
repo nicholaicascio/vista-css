@@ -127,6 +127,12 @@ requests.
 
 ## Acknowledgements
 
-Inspired by and in the spirit of [98.css](https://github.com/jdan/98.css) by
-Jordan Scales and [XP.css](https://github.com/botoxparty/XP.css) by Adam
-Hammad, both MIT licensed. vista.css is MIT too.
+Inspired by and in the spirit of:
+
+- [98.css](https://github.com/jdan/98.css) by Jordan Scales
+- [XP.css](https://github.com/botoxparty/XP.css) by Adam Hammad
+- [7.css](https://github.com/khang-nd/7.css) by Khang Nguyen Duy (khang-nd)
+
+All three are MIT licensed. The Aero-era controls in particular — tabs, menus,
+tree view, progress bar, scrollbars and the list view — follow 7.css's
+conventions. vista.css is MIT too.

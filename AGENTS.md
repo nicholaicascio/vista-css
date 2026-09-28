@@ -2,7 +2,8 @@
 
 Reference for anyone (human or AI agent) implementing or extending **vista.css** —
 a Windows Vista **Aero** design system in the spirit of
-[98.css](https://github.com/jdan/98.css) and [XP.css](https://github.com/botoxparty/XP.css).
+[98.css](https://github.com/jdan/98.css), [XP.css](https://github.com/botoxparty/XP.css)
+and [7.css](https://github.com/khang-nd/7.css).
 
 ## The essentials
 
