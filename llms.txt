@@ -1,0 +1,55 @@
+# vista.css
+
+> A Windows Vista "Aero" design system in pure CSS — translucent glass windows,
+> glossy controls, Segoe UI. No JavaScript. Markup-compatible with 98.css and
+> XP.css.
+
+vista.css turns semantic HTML into a faithful Windows Vista Aero interface. It
+ships as one self-contained stylesheet (`dist/Vista.css`) with icons inlined as
+data URIs and no bundled fonts. The window frame and taskbar are translucent
+`backdrop-filter` glass, so they need a background behind them.
+
+- Requires `backdrop-filter` (all current browsers; `-webkit-` prefix included).
+- No build step to consume: link the CSS, or `npm install vista.css`.
+- One theme today: `aero`. Add others under `themes/<name>/`.
+
+## Docs
+
+- [README](README.md): install and usage.
+- [AGENTS.md](AGENTS.md): full component/markup reference, theming variables,
+  and contributor conventions.
+- [components.json](components.json): machine-readable component manifest with
+  copy-paste markup.
+- Live docs: https://nicholaicascio.github.io/vista-css/
+
+## Components
+
+- Window: `.window` › `.title-bar` (`.title-bar-text`, `.title-bar-controls`),
+  `.window-body`, `.status-bar` › `.status-bar-field`.
+- Window controls: `button[aria-label="Minimize|Maximize|Restore|Help|Close"]`.
+- Buttons: `button`, `.default`, `.active`, `.focused`.
+- Fields: `input[type=text|password|email|search|url|tel|number]`, `textarea`,
+  `select`; helpers `.field-row`, `.field-row-stacked`.
+- Checkbox / radio: `input[type=checkbox|radio]` plus an adjacent `<label>`
+  (the label draws the control).
+- Tabs: `menu[role=tablist]` › `button[aria-selected]`, `[role=tabpanel]`,
+  `.justified`.
+- Group box: `fieldset` › `legend`, `.group`.
+- Tree view: `ul.tree-view`, `.has-container`, `.has-collapse-button`,
+  `.has-connector`; collapsing via native `<details>`/`<summary>`.
+- Progress bar: `[role=progressbar]` › `div`; `.animate`, `.marquee`,
+  `.paused`, `.error`.
+- Scrollbar: `.has-scrollbar` on the scrolling container.
+- Menus: `ul[role=menubar]`, `ul[role=menu]`, `li[role=menuitem]`; `.can-hover`,
+  `.has-divider`, `[aria-disabled]`, `[aria-haspopup]`.
+- Toolbar: `.toolbar`, `.toolbar-divider`, `button[aria-pressed]`.
+- Balloon tooltip: `[role=tooltip]`; `.is-top`, `.is-left`, `.is-right`.
+- Taskbar: `.taskbar`, `.start-orb`, `.taskbar-tasks`, `.taskbar-button`,
+  `.taskbar-button-icon`, `.taskbar-button-text`, `.taskbar-tray`, `.tray-clock`.
+
+## Theming
+
+All visuals are driven by CSS custom properties on `:root`. Override `--surface`,
+`--accent`, `--glass-tint`, `--glass-blur`, `--button-face`, `--field-border`,
+`--progress-bar`, `--taskbar-bg` and friends to recolor. See AGENTS.md for the
+full list.

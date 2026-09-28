@@ -1,0 +1,167 @@
+{
+  "name": "vista.css",
+  "version": "0.1.0",
+  "description": "A Windows Vista Aero design system in pure CSS. No JavaScript. Markup-compatible with 98.css and XP.css.",
+  "entry": "dist/Vista.css",
+  "markupCompatibleWith": ["98.css", "xp.css"],
+  "requires": ["backdrop-filter"],
+  "notes": [
+    "CSS only: no JavaScript ships with vista.css.",
+    "The window frame and taskbar are translucent backdrop-filter glass and need a background behind them.",
+    "Icons are inlined as data URIs; the type stack uses the system Segoe UI. Nothing else needs bundling."
+  ],
+  "components": [
+    {
+      "id": "window",
+      "name": "Window",
+      "summary": "Translucent Aero glass frame with an opaque client area. Controls are keyed off aria-label.",
+      "classes": [
+        "window",
+        "title-bar",
+        "title-bar-text",
+        "title-bar-controls",
+        "window-body",
+        "status-bar",
+        "status-bar-field"
+      ],
+      "markup": "<div class=\"window\" style=\"width: 320px\">\n  <div class=\"title-bar\">\n    <div class=\"title-bar-text\">My First Vista Program</div>\n    <div class=\"title-bar-controls\">\n      <button aria-label=\"Minimize\"></button>\n      <button aria-label=\"Maximize\"></button>\n      <button aria-label=\"Close\"></button>\n    </div>\n  </div>\n  <div class=\"window-body\">\n    <p>Hello, Aero!</p>\n  </div>\n  <div class=\"status-bar\">\n    <p class=\"status-bar-field\">Ready</p>\n    <p class=\"status-bar-field\">3 objects</p>\n  </div>\n</div>"
+    },
+    {
+      "id": "window-controls",
+      "name": "Window controls",
+      "summary": "Title-bar buttons selected by aria-label. Order is free. Use Restore instead of Maximize on a maximized window.",
+      "classes": ["title-bar-controls"],
+      "attributes": { "aria-label": ["Minimize", "Maximize", "Restore", "Help", "Close"] },
+      "markup": "<div class=\"title-bar-controls\">\n  <button aria-label=\"Minimize\"></button>\n  <button aria-label=\"Restore\"></button>\n  <button aria-label=\"Help\"></button>\n  <button aria-label=\"Close\"></button>\n</div>"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "summary": "Glossy Aero push button. .default (or :focus-visible) adds the aqua default-button glow.",
+      "classes": ["default", "active", "focused"],
+      "markup": "<button>OK</button>\n<button class=\"default\">Apply</button>\n<button disabled>Disabled</button>"
+    },
+    {
+      "id": "text-field",
+      "name": "Text field",
+      "summary": "White Aero field with a hairline border and a blue focus glow. Applies to text, password, email, search, url, tel and number inputs, plus textarea.",
+      "classes": ["field-row", "field-row-stacked"],
+      "selectors": ["input[type=text]", "input[type=password]", "input[type=email]", "input[type=search]", "input[type=url]", "input[type=tel]", "input[type=number]", "textarea"],
+      "markup": "<div class=\"field-row\">\n  <label for=\"name\">Name</label>\n  <input id=\"name\" type=\"text\" value=\"Nick\" />\n</div>\n<div class=\"field-row\" style=\"align-items: flex-start\">\n  <label for=\"notes\">Notes</label>\n  <textarea id=\"notes\" rows=\"3\"></textarea>\n</div>"
+    },
+    {
+      "id": "select",
+      "name": "Combobox",
+      "summary": "A native <select> skinned with a glossy button and dropdown arrow on the right.",
+      "selectors": ["select"],
+      "markup": "<div class=\"field-row\">\n  <label for=\"theme\">Color scheme</label>\n  <select id=\"theme\">\n    <option>Windows Aero</option>\n    <option>Windows Vista Basic</option>\n    <option>Windows Classic</option>\n  </select>\n</div>"
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "summary": "The real input is hidden; the immediately following <label> draws the control, so the input and label must be adjacent siblings.",
+      "selectors": ["input[type=checkbox]"],
+      "markup": "<div class=\"field-row\">\n  <input id=\"cb1\" type=\"checkbox\" checked />\n  <label for=\"cb1\">Show hidden files</label>\n</div>"
+    },
+    {
+      "id": "radio",
+      "name": "Radio",
+      "summary": "Same pattern as the checkbox: hidden input plus an adjacent label. Group with a shared name.",
+      "selectors": ["input[type=radio]"],
+      "markup": "<div class=\"field-row\">\n  <input id=\"rb1\" type=\"radio\" name=\"scheme\" checked />\n  <label for=\"rb1\">Windows Aero</label>\n</div>\n<div class=\"field-row\">\n  <input id=\"rb2\" type=\"radio\" name=\"scheme\" />\n  <label for=\"rb2\">Windows Vista Basic</label>\n</div>"
+    },
+    {
+      "id": "range",
+      "name": "Slider",
+      "summary": "Glossy Aero thumb on a recessed track.",
+      "selectors": ["input[type=range]"],
+      "markup": "<input type=\"range\" min=\"0\" max=\"100\" value=\"40\" />"
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "summary": "Selected tab goes flat and merges into the panel. Add .justified to stretch the tabs.",
+      "classes": ["justified"],
+      "selectors": ["menu[role=tablist]", "[role=tabpanel]"],
+      "markup": "<menu role=\"tablist\">\n  <button aria-selected=\"true\">General</button>\n  <button>Security</button>\n  <button>Details</button>\n</menu>\n<div role=\"tabpanel\">\n  <p>Content of the General tab.</p>\n</div>"
+    },
+    {
+      "id": "group-box",
+      "name": "Group box",
+      "summary": "Rounded hairline frame with the legend cutting through it.",
+      "classes": ["group"],
+      "selectors": ["fieldset", "legend"],
+      "markup": "<fieldset>\n  <legend>Startup</legend>\n  <div class=\"group\">\n    <div class=\"field-row\">\n      <input id=\"gb1\" type=\"checkbox\" checked />\n      <label for=\"gb1\">Run at startup</label>\n    </div>\n    <div class=\"field-row\">\n      <input id=\"gb2\" type=\"checkbox\" />\n      <label for=\"gb2\">Show a notification</label>\n    </div>\n  </div>\n</fieldset>"
+    },
+    {
+      "id": "tree-view",
+      "name": "Tree view",
+      "summary": "Collapsing uses native <details>/<summary>, so no JavaScript is needed.",
+      "classes": ["tree-view", "has-container", "has-collapse-button", "has-connector", "selected"],
+      "selectors": ["ul.tree-view", "details", "summary"],
+      "markup": "<ul class=\"tree-view has-container has-collapse-button\" style=\"width: 220px\">\n  <li>\n    <details open>\n      <summary>Desktop</summary>\n      <ul>\n        <li>Documents</li>\n        <li>\n          <details>\n            <summary>Network</summary>\n            <ul>\n              <li>Server</li>\n            </ul>\n          </details>\n        </li>\n      </ul>\n    </details>\n  </li>\n</ul>"
+    },
+    {
+      "id": "progress-bar",
+      "name": "Progress bar",
+      "summary": "The inner element is the fill; give it a width. Use .marquee (empty, no inner div) for the indeterminate sweep.",
+      "classes": ["animate", "marquee", "paused", "error"],
+      "selectors": ["[role=progressbar]", "[role=progressbar] > div"],
+      "markup": "<div role=\"progressbar\" style=\"width: 260px\">\n  <div style=\"width: 60%\"></div>\n</div>\n\n<div role=\"progressbar\" class=\"marquee\" style=\"width: 260px\"></div>"
+    },
+    {
+      "id": "scrollbar",
+      "name": "Scrollbar",
+      "summary": "Add has-scrollbar to the scrolling container. WebKit/Blink get the full Aero treatment; Firefox falls back to scrollbar-color.",
+      "classes": ["has-scrollbar"],
+      "markup": "<div class=\"has-scrollbar\" style=\"height: 130px; overflow-y: scroll\">\n  <p>Scroll me.</p>\n</div>"
+    },
+    {
+      "id": "menubar",
+      "name": "Menu bar",
+      "summary": "Submenus open on focus, or on hover when an ancestor has .can-hover. No JavaScript.",
+      "classes": ["can-hover", "has-divider"],
+      "selectors": ["ul[role=menubar]", "li[role=menuitem]"],
+      "markup": "<ul role=\"menubar\" class=\"can-hover\">\n  <li role=\"menuitem\" tabindex=\"0\" aria-haspopup=\"true\">\n    File\n    <ul role=\"menu\">\n      <li role=\"menuitem\"><a href=\"#\">Open <span>Ctrl+O</span></a></li>\n      <li role=\"menuitem\" class=\"has-divider\"><a href=\"#\">Save As...</a></li>\n      <li role=\"menuitem\" aria-disabled=\"true\"><a href=\"#\">Print</a></li>\n      <li role=\"menuitem\">\n        <input type=\"checkbox\" id=\"m1\" checked />\n        <label for=\"m1\">Show hidden files</label>\n      </li>\n    </ul>\n  </li>\n  <li role=\"menuitem\" tabindex=\"0\">View</li>\n</ul>"
+    },
+    {
+      "id": "menu",
+      "name": "Menu",
+      "summary": "A standalone dropdown. Use has-divider for a separator, aria-disabled to disable, aria-haspopup for a caret, <span> for a shortcut, <img> for a gutter icon.",
+      "classes": ["can-hover", "has-divider"],
+      "selectors": ["ul[role=menu]", "li[role=menuitem]"],
+      "markup": "<ul role=\"menu\" class=\"can-hover\" style=\"width: 200px\">\n  <li role=\"menuitem\" tabindex=\"0\" aria-haspopup=\"true\">\n    Sort by\n    <ul role=\"menu\">\n      <li role=\"menuitem\"><a href=\"#\">Name</a></li>\n      <li role=\"menuitem\"><a href=\"#\">Size</a></li>\n    </ul>\n  </li>\n  <li role=\"menuitem\"><a href=\"#\">Refresh</a></li>\n</ul>"
+    },
+    {
+      "id": "toolbar",
+      "name": "Toolbar",
+      "summary": "Flat buttons that light up on hover; [aria-pressed=true] gives the pressed state.",
+      "classes": ["toolbar", "toolbar-divider"],
+      "markup": "<div class=\"toolbar\">\n  <button>Organize</button>\n  <button>Share with</button>\n  <div class=\"toolbar-divider\"></div>\n  <button>New folder</button>\n</div>"
+    },
+    {
+      "id": "tooltip",
+      "name": "Balloon tooltip",
+      "summary": "Default tail points up (balloon below the control); .is-top points it down; .is-left / .is-right move it sideways.",
+      "classes": ["is-top", "is-left", "is-right"],
+      "selectors": ["[role=tooltip]"],
+      "markup": "<div role=\"tooltip\">A balloon is better known as a tooltip.</div>\n<div role=\"tooltip\" class=\"is-top\">This balloon sits above its control.</div>"
+    },
+    {
+      "id": "taskbar",
+      "name": "Taskbar",
+      "summary": "Aero glass taskbar with a Start orb, task buttons and a tray clock.",
+      "classes": [
+        "taskbar",
+        "start-orb",
+        "taskbar-tasks",
+        "taskbar-button",
+        "taskbar-button-icon",
+        "taskbar-button-text",
+        "taskbar-tray",
+        "tray-clock"
+      ],
+      "markup": "<div class=\"taskbar\">\n  <button class=\"start-orb\" aria-label=\"Start\"></button>\n  <div class=\"taskbar-tasks\">\n    <button class=\"taskbar-button\" aria-pressed=\"true\">\n      <span class=\"taskbar-button-icon\"></span>\n      <span class=\"taskbar-button-text\">Windows Explorer</span>\n    </button>\n  </div>\n  <div class=\"taskbar-tray\">\n    <div class=\"tray-clock\">\n      <span>8:00 PM</span>\n      <span>9/27/2026</span>\n    </div>\n  </div>\n</div>"
+    }
+  ]
+}

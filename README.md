@@ -64,18 +64,31 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 
 ## Components
 
-| Component | Class / markup | Status |
-| --- | --- | --- |
-| Window | `.window` | ✅ M2 |
-| Title bar | `.title-bar`, `.title-bar-text` | ✅ M2 |
-| Window controls | `.title-bar-controls button[aria-label="Minimize\|Maximize\|Restore\|Help\|Close"]` | ✅ M2 |
-| Status bar | `.status-bar`, `.status-bar-field` | ✅ M2 |
-| Buttons | `button`, `.default` | ✅ M3 |
-| Form controls | `input`, `textarea`, `select`, `input[type=checkbox\|radio\|range]`, `.field-row` | ✅ M3 |
-| Tabs / group box / tree view | `menu[role=tablist]`, `[role=tabpanel]`, `fieldset`, `ul.tree-view` | ✅ M4 |
-| Progress bar / scrollbars | `[role=progressbar]`, `.has-scrollbar` | ✅ M4 |
-| Menus / toolbar / balloons | `ul[role=menubar]`, `ul[role=menu]`, `.toolbar`, `[role=tooltip]` | ✅ M5 |
-| Taskbar / Start orb | `.taskbar`, `.start-orb`, `.taskbar-button`, `.tray-clock` | ✅ M6 |
+| Component | Class / markup |
+| --- | --- |
+| Window | `.window` |
+| Title bar | `.title-bar`, `.title-bar-text` |
+| Window controls | `.title-bar-controls button[aria-label="Minimize\|Maximize\|Restore\|Help\|Close"]` |
+| Status bar | `.status-bar`, `.status-bar-field` |
+| Buttons | `button`, `.default` |
+| Form controls | `input`, `textarea`, `select`, `input[type=checkbox\|radio\|range]`, `.field-row` |
+| Tabs | `menu[role=tablist]`, `[role=tabpanel]` |
+| Group box | `fieldset`, `legend`, `.group` |
+| Tree view | `ul.tree-view.has-container` |
+| Progress bar | `[role=progressbar]` |
+| Scrollbar | `.has-scrollbar` |
+| Menus | `ul[role=menubar]`, `ul[role=menu]` |
+| Toolbar | `.toolbar`, `.toolbar-divider` |
+| Balloon tooltip | `[role=tooltip]` |
+| Taskbar | `.taskbar`, `.start-orb`, `.taskbar-button`, `.tray-clock` |
+
+## Reference
+
+- [`AGENTS.md`](./AGENTS.md) — the full component, markup and theming
+  reference (handy for AI agents).
+- [`components.json`](./components.json) — machine-readable manifest with
+  copy-paste markup per component.
+- Docs site — [nicholaicascio.github.io/vista-css](https://nicholaicascio.github.io/vista-css/)
 
 ## Developing
 

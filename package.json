@@ -11,6 +11,9 @@
     "dist/GUI.css.map",
     "gui",
     "themes",
+    "AGENTS.md",
+    "llms.txt",
+    "components.json",
     "README.md",
     "LICENSE"
   ],
