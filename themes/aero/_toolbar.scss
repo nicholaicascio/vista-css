@@ -1,5 +1,41 @@
 /*-------------------------------------------*\
     Toolbar — Aero
 
-    Scheduled for M5.
+    A light gradient strip with flat buttons that light up on hover.
 \*-------------------------------------------*/
+
+.toolbar {
+  color: var(--text);
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid #c5d0d9;
+}
+
+.toolbar button {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: none;
+  box-shadow: none;
+}
+
+.toolbar button:hover:not(:disabled) {
+  border-color: var(--menu-highlight-border);
+  background: var(--menu-highlight-bg);
+  box-shadow: none;
+}
+
+.toolbar button:active:not(:disabled),
+.toolbar button[aria-pressed="true"] {
+  border-color: var(--button-border-active);
+  background: linear-gradient(180deg, #dbe9f5, #c2ddf3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.toolbar-divider {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #c5d0d9 30%,
+    #c5d0d9 70%,
+    transparent
+  );
+}

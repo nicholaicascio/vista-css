@@ -314,6 +314,124 @@
       </section>
 
       <section class="docs-section">
+        <h2>Menus</h2>
+        <p>
+          A menu bar (<code>role="menubar"</code>) and dropdowns
+          (<code>role="menu"</code>) with no JavaScript — submenus open on focus,
+          or on hover when the root has <code>can-hover</code>. Use
+          <code>has-divider</code> for a separator, <code>aria-disabled</code>
+          to disable an item, and a <code>&lt;span&gt;</code> for a shortcut.
+        </p>
+        <%- example(`
+          <div class="window" style="width: 420px">
+            <div class="title-bar">
+              <div class="title-bar-text">Explorer</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="padding: 0">
+              <ul role="menubar" class="can-hover">
+                <li role="menuitem" tabindex="0" aria-haspopup="true">
+                  File
+                  <ul role="menu">
+                    <li role="menuitem"><a href="#menus">Open <span>Ctrl+O</span></a></li>
+                    <li role="menuitem"><a href="#menus">Save <span>Ctrl+S</span></a></li>
+                    <li role="menuitem" class="has-divider"><a href="#menus">Save As... <span>Ctrl+Shift+S</span></a></li>
+                    <li role="menuitem"><a href="#menus">Exit</a></li>
+                  </ul>
+                </li>
+                <li role="menuitem" tabindex="0" aria-haspopup="true">
+                  Edit
+                  <ul role="menu">
+                    <li role="menuitem"><a href="#menus">Undo</a></li>
+                    <li role="menuitem"><a href="#menus">Copy</a></li>
+                    <li role="menuitem"><a href="#menus">Paste</a></li>
+                  </ul>
+                </li>
+                <li role="menuitem" tabindex="0">View</li>
+                <li role="menuitem" tabindex="0">Help</li>
+              </ul>
+              <p style="padding: 8px 10px; margin: 0">Hover <strong>File</strong> or <strong>Edit</strong> to open a menu.</p>
+            </div>
+          </div>
+        `) %>
+        <%- example(`
+          <ul role="menu" class="can-hover" style="width: 200px">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              View
+              <ul role="menu">
+                <li role="menuitem" tabindex="0" aria-haspopup="true">
+                  Sort by
+                  <ul role="menu">
+                    <li role="menuitem"><a href="#menus">Name</a></li>
+                    <li role="menuitem"><a href="#menus">Size</a></li>
+                  </ul>
+                </li>
+                <li role="menuitem"><a href="#menus">Refresh</a></li>
+              </ul>
+            </li>
+            <li role="menuitem" class="has-divider"><a href="#menus">Refresh</a></li>
+            <li role="menuitem" aria-disabled="true"><a href="#menus">Paste</a></li>
+            <li role="menuitem">
+              <input type="checkbox" id="mn1" checked />
+              <label for="mn1">Show hidden files</label>
+            </li>
+            <li role="menuitem">
+              <input type="radio" name="mnv" id="mn2" checked />
+              <label for="mn2">Large icons</label>
+            </li>
+            <li role="menuitem">
+              <input type="radio" name="mnv" id="mn3" />
+              <label for="mn3">Small icons</label>
+            </li>
+          </ul>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Toolbar</h2>
+        <p>Buttons stay flat until you hover them.</p>
+        <%- example(`
+          <div class="window" style="width: 400px">
+            <div class="title-bar">
+              <div class="title-bar-text">Command bar</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="padding: 0">
+              <div class="toolbar">
+                <button>Organize</button>
+                <button>Share with</button>
+                <button>Burn</button>
+                <div class="toolbar-divider"></div>
+                <button>New folder</button>
+              </div>
+              <p style="padding: 8px 10px; margin: 0">The toolbar sits under the menu bar.</p>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Balloon tooltip</h2>
+        <p>
+          A Vista balloon, complete with tail. Use <code>is-top</code> to point
+          the tail down, and <code>is-left</code> / <code>is-right</code> to move
+          it sideways.
+        </p>
+        <%- example(`
+          <div role="tooltip" style="margin-top: 12px">A balloon is better known as a tooltip in web development.</div>
+          <div role="tooltip" class="is-top" style="margin-top: 12px">This balloon sits above its control.</div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -326,10 +444,7 @@
 
       <section class="docs-section">
         <h2>Roadmap</h2>
-        <p>
-          Menus, toolbars and balloon tooltips (M5) · the Aero taskbar and
-          Start orb (M6).
-        </p>
+        <p>The Aero taskbar and Start orb (M6).</p>
       </section>
 
       <footer class="docs-footer">

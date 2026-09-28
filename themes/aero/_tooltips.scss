@@ -1,5 +1,76 @@
 /*-------------------------------------------*\
-    Tooltips — Aero
+    Tooltips / balloons — Aero
 
-    Scheduled for M5.
+    A white balloon with a soft gradient, drop shadow and a bordered tail. The
+    tail sits on top by default; move it with `.is-top` / `.is-left` /
+    `.is-right`.
+
+    The tail is drawn with two stacked triangles (border for the outline, one
+    smaller for the fill) so it sits cleanly outside the balloon without
+    relying on a negative z-index.
 \*-------------------------------------------*/
+
+[role="tooltip"] {
+  max-width: 260px;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--balloon-bg);
+  border: 1px solid var(--balloon-border);
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Outer triangle (the outline). */
+[role="tooltip"]::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--balloon-border);
+}
+
+/* Inner triangle (the fill), drawn over the outline. */
+[role="tooltip"]::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 19px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ffffff;
+}
+
+/* Balloon above the control, tail on the bottom. */
+[role="tooltip"].is-top::before {
+  top: auto;
+  bottom: -8px;
+  border-bottom: 0;
+  border-top: 8px solid var(--balloon-border);
+}
+
+[role="tooltip"].is-top::after {
+  top: auto;
+  bottom: -6px;
+  border-bottom: 0;
+  border-top: 7px solid #ebebeb;
+}
+
+[role="tooltip"].is-left::before {
+  left: auto;
+  right: 18px;
+}
+
+[role="tooltip"].is-left::after {
+  left: auto;
+  right: 19px;
+}
+
+[role="tooltip"].is-right::before {
+  left: 18px;
+}
+
+[role="tooltip"].is-right::after {
+  left: 19px;
+}

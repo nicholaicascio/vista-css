@@ -1,5 +1,17 @@
 /*-------------------------------------------*\
-    Tooltips
+    Tooltips / balloons (structural base)
 
-    Balloon tooltips. Scheduled for M5.
+    Markup: <div role="tooltip">...</div>
+
+    The tail position is chosen with `.is-top`, `.is-bottom`, `.is-left` and
+    `.is-right`. Visual styling lives in themes/aero/_tooltips.scss.
 \*-------------------------------------------*/
+
+[role="tooltip"] {
+  position: relative;
+}
+
+/* Attach an absolutely positioned balloon to a control. */
+[role="tooltip"][id] {
+  position: absolute;
+}

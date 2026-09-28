@@ -1,5 +1,97 @@
 /*-------------------------------------------*\
     Menus — Aero
 
-    Scheduled for M5.
+    Glassy menu bar with a blue hover highlight, a dropdown on the Aero surface
+    with an icon gutter, and check/radio gutter marks.
 \*-------------------------------------------*/
+
+ul[role="menubar"] {
+  color: var(--text);
+  background: linear-gradient(
+    180deg,
+    #ffffff 20%,
+    #f1f4fa 25%,
+    #f1f4fa 43%,
+    #d4dbee 48%,
+    #e6eaf6 100%
+  );
+}
+
+ul[role="menubar"] > [role="menuitem"]:hover,
+ul[role="menubar"] > [role="menuitem"]:focus,
+ul[role="menubar"] > [role="menuitem"]:focus-within {
+  color: #ffffff;
+  background: #3399ff;
+  outline: none;
+}
+
+ul[role="menu"] {
+  min-width: 150px;
+  padding: 2px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--balloon-border);
+  box-shadow: 4px 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+ul[role="menu"]::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 2px;
+  left: var(--menu-gutter);
+  width: 2px;
+  height: calc(100% - 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #ffffff;
+}
+
+[role="menu"] > [role="menuitem"] > a:hover,
+[role="menu"] > [role="menuitem"] > a:focus-visible,
+[role="menu"] > [role="menuitem"] > button:hover,
+[role="menu"] > [role="menuitem"] > button:focus-visible,
+[role="menu"] > [role="menuitem"] > label:hover,
+[role="menu"] > [role="menuitem"][aria-haspopup="true"]:hover,
+[role="menu"] > [role="menuitem"][aria-haspopup="true"]:focus-visible {
+  background: var(--menu-highlight-bg);
+  border-color: var(--menu-highlight-border);
+  outline: none;
+}
+
+[role="menu"] > [role="menuitem"] > label:hover {
+  cursor: default;
+}
+
+[role="menu"] [role="menuitem"] span {
+  margin-left: 24px;
+  color: var(--text-muted);
+}
+
+[role="menuitem"].has-divider::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 3px 0 2px var(--menu-gutter);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.15), inset 0 -1px #ffffff;
+}
+
+/* Gutter marks for checked menu options */
+[role="menuitem"] > input[type="checkbox"]:checked + label::before,
+[role="menuitem"] > input[type="radio"]:checked + label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc((var(--menu-gutter) - 11px) / 2);
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  background: svg-load("./icon/checkmark.svg") no-repeat center;
+}
+
+[role="menuitem"] > input[type="radio"]:checked + label::before {
+  left: calc((var(--menu-gutter) - 7px) / 2);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1a3d6b;
+}

@@ -133,4 +133,21 @@
   /* Scrollbar (the thumb color is also the Firefox fallback) */
   --scrollbar-track: #f0f0f0;
   --scrollbar-thumb: #d6d2c9;
+
+  /* Menus */
+  --menu-gutter: 28px;
+  --menu-highlight-border: #aaddfa;
+  --menu-highlight-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(230, 236, 245, 0.8) 90%,
+    rgba(255, 255, 255, 0.8)
+  );
+
+  /* Toolbar */
+  --toolbar-bg: linear-gradient(180deg, #f7f9fc, #eef2f8 45%, #e2e8f2);
+
+  /* Tooltip / balloon */
+  --balloon-border: rgba(0, 0, 0, 0.4);
+  --balloon-bg: linear-gradient(180deg, #ffffff, #ebebeb);
 }

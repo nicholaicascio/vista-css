@@ -1,5 +1,33 @@
 /*-------------------------------------------*\
-    Toolbar
+    Toolbar (structural base)
 
-    Scheduled for M5.
+    Markup:
+
+        <div class="toolbar">
+          <button>Back</button>
+          <button>Forward</button>
+          <div class="toolbar-divider"></div>
+          <button>Search</button>
+        </div>
+
+    Visual styling lives in themes/aero/_toolbar.scss.
 \*-------------------------------------------*/
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 4px;
+}
+
+.toolbar button {
+  min-width: 0;
+  min-height: 0;
+  padding: 4px 8px;
+}
+
+.toolbar-divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 2px 4px;
+}
