@@ -1,5 +1,21 @@
 /*-------------------------------------------*\
-    Progress bar
+    Progress bar (structural base)
 
-    Scheduled for M4.
+    Markup: <div role="progressbar"><div style="width: 60%"></div></div>
+
+    The inner element is the fill. Visual styling lives in
+    themes/aero/_progressbar.scss.
 \*-------------------------------------------*/
+
+[role="progressbar"] {
+  position: relative;
+  display: block;
+  height: 15px;
+  margin: 2px 0;
+  overflow: hidden;
+
+  > div {
+    position: relative;
+    height: 100%;
+  }
+}

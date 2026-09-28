@@ -1,5 +1,15 @@
 /*-------------------------------------------*\
-    Scrollbar
+    Scrollbar (structural base)
 
-    Scheduled for M4.
+    Add `has-scrollbar` to a scrolling container:
+
+        <div class="has-scrollbar" style="overflow: auto">...</div>
+
+    Colors, gradients and arrow buttons live in
+    themes/aero/_scrollbar.scss.
 \*-------------------------------------------*/
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 16px;
+  height: 17px;
+}

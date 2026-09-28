@@ -1,5 +1,33 @@
 /*-------------------------------------------*\
     Tabs — Aero
 
-    Scheduled for M4.
+    Inactive tabs borrow the standard glossy Aero button; the selected tab goes
+    flat and merges into the panel below it.
 \*-------------------------------------------*/
+
+menu[role="tablist"] button {
+  border-radius: 3px 3px 0 0;
+  color: var(--button-text);
+
+  &[aria-selected="true"] {
+    color: var(--text);
+    background-color: var(--surface);
+    background-image: none;
+    border-color: var(--button-border);
+    border-bottom-color: var(--surface);
+    box-shadow: none;
+
+    &:hover {
+      background-image: none;
+      border-color: var(--button-border);
+      box-shadow: none;
+    }
+  }
+}
+
+[role="tabpanel"] {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--button-border);
+  border-radius: 0 3px 3px 3px;
+}

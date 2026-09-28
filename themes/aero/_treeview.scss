@@ -1,5 +1,74 @@
 /*-------------------------------------------*\
     Tree view — Aero
 
-    Scheduled for M4.
+    `.has-container` gives the white list surface; `.has-collapse-button` draws
+    the disclosure triangles (Vista uses triangles, not the old +/- boxes).
+    `.has-connector` adds the optional dotted guide lines.
 \*-------------------------------------------*/
+
+ul.tree-view {
+  font-size: 12px;
+  color: var(--text);
+
+  a {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  a:focus,
+  > li.selected > a,
+  li.selected > a,
+  li[aria-selected="true"] > a {
+    outline: none;
+    background: linear-gradient(180deg, #cbe8fb, #a7d9f5);
+  }
+
+  &.has-container {
+    background: #ffffff;
+    border: 1px solid var(--field-border);
+    border-radius: 2px;
+  }
+
+  &.has-collapse-button details > summary {
+    position: relative;
+    padding-left: 14px;
+
+    &::before {
+      content: "\25B8";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #3a3a3a;
+      font-size: 9px;
+      line-height: 1;
+    }
+  }
+
+  &.has-collapse-button details[open] > summary::before {
+    content: "\25BE";
+  }
+
+  &.has-connector ul {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 7px;
+      height: calc(100% - 8px);
+      border-left: 1px dotted #a0a0a0;
+    }
+
+    > li::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -16px;
+      width: 12px;
+      border-bottom: 1px dotted #a0a0a0;
+    }
+  }
+}

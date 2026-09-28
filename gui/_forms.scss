@@ -105,3 +105,12 @@ input[type="radio"] + label::before {
   align-items: center;
   column-gap: var(--grouped-element-spacing);
 }
+
+.field-row-stacked {
+  display: flex;
+  flex-direction: column;
+
+  > * + * {
+    margin-top: var(--grouped-element-spacing);
+  }
+}

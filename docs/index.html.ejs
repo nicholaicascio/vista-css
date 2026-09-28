@@ -187,6 +187,133 @@
       </section>
 
       <section class="docs-section">
+        <h2>Tabs</h2>
+        <p>
+          Inactive tabs use the glossy push-button look; the selected tab goes
+          flat and merges into the panel. Add <code>justified</code> to the
+          tablist to stretch the tabs.
+        </p>
+        <%- example(`
+          <div class="window" style="width: 380px">
+            <div class="title-bar">
+              <div class="title-bar-text">Options</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <menu role="tablist">
+                <button aria-selected="true">General</button>
+                <button>Security</button>
+                <button>Details</button>
+              </menu>
+              <div role="tabpanel">
+                <p>Content of the General tab.</p>
+              </div>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Group box</h2>
+        <p>A rounded hairline frame with the legend cutting through it.</p>
+        <%- example(`
+          <div class="window" style="width: 320px">
+            <div class="title-bar">
+              <div class="title-bar-text">Settings</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <fieldset>
+                <legend>Startup</legend>
+                <div class="group">
+                  <div class="field-row">
+                    <input id="gb1" type="checkbox" checked />
+                    <label for="gb1">Run at startup</label>
+                  </div>
+                  <div class="field-row">
+                    <input id="gb2" type="checkbox" />
+                    <label for="gb2">Show a notification</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Tree view</h2>
+        <p>
+          Collapsible branches use native <code>&lt;details&gt;</code>, so they
+          work without JavaScript. <code>has-container</code> adds the white
+          list surface; <code>has-connector</code> adds the optional dotted
+          guide lines.
+        </p>
+        <%- example(`
+          <ul class="tree-view has-container has-collapse-button" style="width: 220px">
+            <li>
+              <details open>
+                <summary>Desktop</summary>
+                <ul>
+                  <li>Documents</li>
+                  <li>Pictures</li>
+                  <li>
+                    <details>
+                      <summary>Network</summary>
+                      <ul>
+                        <li>Server (\\\\srv)</li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Progress bar</h2>
+        <p>
+          The Vista green bar. Give the inner element a width for a determinate
+          bar, or add <code>marquee</code> for the indeterminate sweep.
+        </p>
+        <%- example(`
+          <div>
+            <div role="progressbar" style="width: 260px">
+              <div style="width: 60%"></div>
+            </div>
+            <div role="progressbar" class="marquee" style="width: 260px; margin-top: 12px"></div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Scrollbar</h2>
+        <p>
+          Add <code>has-scrollbar</code> to a scrolling container for the Aero
+          track, glossy thumb and arrow buttons.
+        </p>
+        <%- example(`
+          <div class="has-scrollbar" style="width: 260px; height: 130px; overflow-y: scroll; background: #fff; color: #0a0a0a; border: 1px solid #7f9db9; border-radius: 2px; padding: 8px">
+            <p style="margin: 0 0 10px">Scroll to see the Aero scrollbar.</p>
+            <p style="margin: 0 0 10px">Documents</p>
+            <p style="margin: 0 0 10px">Pictures</p>
+            <p style="margin: 0 0 10px">Music</p>
+            <p style="margin: 0 0 10px">Videos</p>
+            <p style="margin: 0">Downloads</p>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -200,8 +327,7 @@
       <section class="docs-section">
         <h2>Roadmap</h2>
         <p>
-          Tabs, group boxes, tree views, progress bars and scrollbars (M4) ·
-          menus, toolbars and balloon tooltips (M5) · the Aero taskbar and
+          Menus, toolbars and balloon tooltips (M5) · the Aero taskbar and
           Start orb (M6).
         </p>
       </section>

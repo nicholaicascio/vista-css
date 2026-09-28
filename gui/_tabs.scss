@@ -1,5 +1,49 @@
 /*-------------------------------------------*\
-    Tabs
+    Tabs (structural base)
 
-    Scheduled for M4.
+    Markup (shared with 98.css / XP.css):
+
+        <menu role="tablist">
+          <button aria-selected="true">Tab one</button>
+          <button>Tab two</button>
+        </menu>
+        <div role="tabpanel">...</div>
+
+    Visual styling lives in themes/aero/_tabs.scss.
 \*-------------------------------------------*/
+
+menu[role="tablist"] {
+  position: relative;
+  display: flex;
+  margin: 0 0 -2px 0;
+  padding-left: 3px;
+  text-indent: 0;
+  list-style-type: none;
+
+  button {
+    display: block;
+    min-width: unset;
+    padding: 3px 10px;
+    z-index: 1;
+
+    &[aria-selected="true"] {
+      position: relative;
+      z-index: 8;
+      margin: -2px 0 1px -3px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &.justified button {
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+[role="tabpanel"] {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 9px;
+  padding: 14px;
+  clear: both;
+}

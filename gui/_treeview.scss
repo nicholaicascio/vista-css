@@ -1,5 +1,40 @@
 /*-------------------------------------------*\
-    Tree view
+    Tree view (structural base)
 
-    Scheduled for M4.
+    Markup: <ul class="tree-view"> with nested <ul> and, for collapsible
+    branches, <details><summary>. Visual styling lives in
+    themes/aero/_treeview.scss.
 \*-------------------------------------------*/
+
+ul.tree-view {
+  display: block;
+  margin: 0;
+  padding: 6px;
+
+  li {
+    position: relative;
+    list-style-type: none;
+    margin-top: 3px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul {
+    margin-top: 3px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+
+  details > summary {
+    cursor: default;
+    list-style: none;
+
+    &::-webkit-details-marker,
+    &::marker {
+      display: none;
+    }
+  }
+}

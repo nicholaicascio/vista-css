@@ -73,11 +73,14 @@
   --button-face-disabled: #f4f4f4;
   --button-glow: rgba(120, 195, 255, 0.9);
   --button-focus-glow: rgba(52, 222, 255, 0.85);
+  --button-face: #f2f2f2;
+  --button-face-shade: #ebebeb;
+  --button-face-dark: #cfcfcf;
   --button-bg: linear-gradient(
     180deg,
-    #f2f2f2 45%,
-    #ebebeb 45%,
-    #cfcfcf 100%
+    var(--button-face) 45%,
+    var(--button-face-shade) 45%,
+    var(--button-face-dark) 100%
   );
   --button-bg-hover: linear-gradient(
     180deg,
@@ -121,4 +124,13 @@
   --control-box-border: #8e8f8f;
   --control-box-border-hover: #3c7fb1;
   --control-border-disabled: #b1b1b1;
+
+  /* Progress bar */
+  --progress-bar: #0bd82c;
+  --progress-bar-paused: #e6df1b;
+  --progress-bar-error: #ef0000;
+
+  /* Scrollbar (the thumb color is also the Firefox fallback) */
+  --scrollbar-track: #f0f0f0;
+  --scrollbar-thumb: #d6d2c9;
 }

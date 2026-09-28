@@ -1,5 +1,130 @@
 /*-------------------------------------------*\
     Scrollbar — Aero
 
-    Scheduled for M4.
+    Add `has-scrollbar` to a scrolling container. WebKit/Blink get the full
+    treatment (track, glossy thumb, arrow buttons); Firefox falls back to
+    `scrollbar-color`.
 \*-------------------------------------------*/
+
+.has-scrollbar {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.has-scrollbar::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background-image: linear-gradient(to right, #e5e5e5, var(--scrollbar-track) 20%);
+}
+
+.has-scrollbar::-webkit-scrollbar-track:horizontal {
+  background-image: linear-gradient(to bottom, #e5e5e5, var(--scrollbar-track) 20%);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+  background-color: var(--button-face);
+  background-image: linear-gradient(
+    to right,
+    var(--button-face) 45%,
+    var(--button-face-shade) 45%,
+    var(--button-face-dark)
+  );
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background-image: linear-gradient(
+    to bottom,
+    var(--button-face) 45%,
+    var(--button-face-shade) 45%,
+    var(--button-face-dark)
+  );
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  border-color: var(--button-border-hover);
+  background-image: linear-gradient(
+    to right,
+    #eaf6fd 45%,
+    #bee6fd 45%,
+    #a7d9f5
+  );
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:horizontal:hover {
+  background-image: linear-gradient(
+    to bottom,
+    #eaf6fd 45%,
+    #bee6fd 45%,
+    #a7d9f5
+  );
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:active {
+  border-color: var(--button-border-active);
+  background-image: linear-gradient(
+    to right,
+    #e5f4fc 0,
+    #c4e5f6 30%,
+    #98d1ef 50%,
+    #68b3db 100%
+  );
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:horizontal:active {
+  background-image: linear-gradient(
+    to bottom,
+    #e5f4fc 0,
+    #c4e5f6 30%,
+    #98d1ef 50%,
+    #68b3db 100%
+  );
+}
+
+/* Arrow buttons */
+.has-scrollbar::-webkit-scrollbar-button {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.has-scrollbar::-webkit-scrollbar-button:vertical {
+  height: 17px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button:vertical:decrement {
+  background-image: svg-load("./icon/scroll-up.svg");
+}
+
+.has-scrollbar::-webkit-scrollbar-button:vertical:increment {
+  background-image: svg-load("./icon/scroll-down.svg");
+}
+
+.has-scrollbar::-webkit-scrollbar-button:horizontal {
+  width: 16px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: svg-load("./icon/scroll-left.svg");
+}
+
+.has-scrollbar::-webkit-scrollbar-button:horizontal:increment {
+  background-image: svg-load("./icon/scroll-right.svg");
+}
+
+.has-scrollbar::-webkit-scrollbar-button:hover {
+  border-color: var(--button-border-hover);
+  background-color: var(--button-face);
+}
+
+.has-scrollbar::-webkit-scrollbar-button:horizontal:start:increment,
+.has-scrollbar::-webkit-scrollbar-button:horizontal:end:decrement,
+.has-scrollbar::-webkit-scrollbar-button:vertical:start:increment,
+.has-scrollbar::-webkit-scrollbar-button:vertical:end:decrement {
+  display: none;
+}

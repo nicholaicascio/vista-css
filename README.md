@@ -72,8 +72,8 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 | Status bar | `.status-bar`, `.status-bar-field` | ✅ M2 |
 | Buttons | `button`, `.default` | ✅ M3 |
 | Form controls | `input`, `textarea`, `select`, `input[type=checkbox\|radio\|range]`, `.field-row` | ✅ M3 |
-| Tabs / group box / tree view | `.tabs`, `.group-box`, `.tree-view` | 🚧 M4 |
-| Progress bar / scrollbars | `.progress-bar`, `::-webkit-scrollbar` | 🚧 M4 |
+| Tabs / group box / tree view | `menu[role=tablist]`, `[role=tabpanel]`, `fieldset`, `ul.tree-view` | ✅ M4 |
+| Progress bar / scrollbars | `[role=progressbar]`, `.has-scrollbar` | ✅ M4 |
 | Menus / toolbars / balloon tooltips | `.menu-bar`, `.toolbar`, `.tooltip` | 🚧 M5 |
 | Taskbar / Start orb | `.taskbar`, `.start-orb` | 🚧 M6 |
 

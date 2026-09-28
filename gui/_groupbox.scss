@@ -1,5 +1,27 @@
 /*-------------------------------------------*\
-    Group box
+    Group box (structural base)
 
-    Scheduled for M4.
+    Markup: <fieldset><legend>Title</legend> ... </fieldset>
+
+    Visual styling lives in themes/aero/_groupbox.scss.
 \*-------------------------------------------*/
+
+fieldset {
+  margin: 0;
+  padding: 10px 12px 12px;
+}
+
+legend {
+  padding: 0 3px;
+}
+
+/* A stack of related fields inside a group box. */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.group + .group {
+  margin-top: 6px;
+}
