@@ -1,5 +1,91 @@
 /*-------------------------------------------*\
-    Taskbar
+    Taskbar (structural base)
 
-    Aero taskbar and Start orb. Scheduled for M6.
+    Markup:
+
+        <div class="taskbar">
+          <button class="start-orb" aria-label="Start"></button>
+          <div class="taskbar-tasks">
+            <button class="taskbar-button" aria-pressed="true">
+              <span class="taskbar-button-icon"></span>
+              <span class="taskbar-button-text">Windows Explorer</span>
+            </button>
+          </div>
+          <div class="taskbar-tray">
+            <div class="tray-clock">
+              <span>8:00 PM</span>
+              <span>9/27/2026</span>
+            </div>
+          </div>
+        </div>
+
+    Visual styling lives in themes/aero/_taskbar.scss.
 \*-------------------------------------------*/
+
+.taskbar {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 6px;
+}
+
+.taskbar .start-orb {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.taskbar-tasks {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 3px;
+  min-width: 0;
+  margin: 0 6px;
+}
+
+.taskbar .taskbar-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 0;
+  max-width: 180px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.taskbar-button-icon {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+.taskbar-button-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskbar-tray {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 8px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.tray-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  text-align: center;
+}

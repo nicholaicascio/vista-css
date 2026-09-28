@@ -75,7 +75,7 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 | Tabs / group box / tree view | `menu[role=tablist]`, `[role=tabpanel]`, `fieldset`, `ul.tree-view` | ✅ M4 |
 | Progress bar / scrollbars | `[role=progressbar]`, `.has-scrollbar` | ✅ M4 |
 | Menus / toolbar / balloons | `ul[role=menubar]`, `ul[role=menu]`, `.toolbar`, `[role=tooltip]` | ✅ M5 |
-| Taskbar / Start orb | `.taskbar`, `.start-orb` | 🚧 M6 |
+| Taskbar / Start orb | `.taskbar`, `.start-orb`, `.taskbar-button`, `.tray-clock` | ✅ M6 |
 
 ## Developing
 

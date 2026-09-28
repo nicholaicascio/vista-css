@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="orb" cx="0.5" cy="0.32" r="0.78">
+      <stop offset="0" stop-color="#a8e0ff"/>
+      <stop offset="0.28" stop-color="#3f97e0"/>
+      <stop offset="0.62" stop-color="#1461ab"/>
+      <stop offset="0.85" stop-color="#0a3d78"/>
+      <stop offset="1" stop-color="#052547"/>
+    </radialGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.82" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.95" stop-color="#dff3ff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#orb)"/>
+  <ellipse cx="24" cy="16" rx="18" ry="10" fill="url(#gloss)"/>
+  <g fill="#ffffff">
+    <rect x="14.5" y="19" width="8" height="6.6" rx="1.4"/>
+    <rect x="25" y="17.6" width="8.6" height="6.8" rx="1.4"/>
+    <rect x="14.5" y="27.4" width="8" height="6.6" rx="1.4"/>
+    <rect x="25" y="26.4" width="8.6" height="6.8" rx="1.4"/>
+  </g>
+  <circle cx="24" cy="24" r="22" fill="url(#rim)"/>
+</svg>

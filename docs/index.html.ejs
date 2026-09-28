@@ -432,6 +432,38 @@
       </section>
 
       <section class="docs-section">
+        <h2>Taskbar</h2>
+        <p>
+          The Aero glass taskbar: Start orb, glass task buttons and a tray
+          clock. It blurs whatever is behind it, so it looks best over a
+          wallpaper.
+        </p>
+        <%- example(`
+          <div style="width: 100%">
+            <div class="taskbar">
+              <button class="start-orb" aria-label="Start"></button>
+              <div class="taskbar-tasks">
+                <button class="taskbar-button" aria-pressed="true">
+                  <span class="taskbar-button-icon"></span>
+                  <span class="taskbar-button-text">Windows Explorer</span>
+                </button>
+                <button class="taskbar-button">
+                  <span class="taskbar-button-icon"></span>
+                  <span class="taskbar-button-text">Notepad</span>
+                </button>
+              </div>
+              <div class="taskbar-tray">
+                <div class="tray-clock">
+                  <span>8:00 PM</span>
+                  <span>9/27/2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -444,7 +476,10 @@
 
       <section class="docs-section">
         <h2>Roadmap</h2>
-        <p>The Aero taskbar and Start orb (M6).</p>
+        <p>
+          All components are implemented. M7 covers the README, an agent-facing
+          reference and publishing.
+        </p>
       </section>
 
       <footer class="docs-footer">
