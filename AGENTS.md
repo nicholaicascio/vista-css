@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Reference for anyone (human or AI agent) implementing or extending **vista.css** —
+Reference for anyone (human or AI agent) implementing or extending **vista.css**,
 a Windows Vista **Aero** design system in the spirit of
 [98.css](https://github.com/jdan/98.css), [XP.css](https://github.com/botoxparty/XP.css)
 and [7.css](https://github.com/khang-nd/7.css).
@@ -15,7 +15,7 @@ and [7.css](https://github.com/khang-nd/7.css).
   controls. Existing `.window` / `.title-bar` / `.window-body` markup restyles
   as-is.
 - **The frame is translucent Aero glass** (`backdrop-filter`). It needs
-  something behind it — a wallpaper, gradient or another window. On a flat
+  something behind it: a wallpaper, gradient or another window. On a flat
   white page the glass has nothing to show.
 - **`backdrop-filter` is required** for the glass and taskbar. It is supported
   in all current browsers; `autoprefixer` emits `-webkit-` for Safari 15+.
@@ -121,7 +121,7 @@ background, `--field-border` hairline, blue focus glow.
 <textarea rows="3"></textarea>
 ```
 
-**Checkbox / radio** — the real `<input>` is hidden and the **immediately
+**Checkbox / radio:** the real `<input>` is hidden and the **immediately
 following `<label>`** draws the control. The `input` and `label` must be
 adjacent siblings:
 
@@ -362,7 +362,7 @@ Key knobs (see `themes/aero/_variables.scss` for the full set):
 | `--taskbar-bg` / `--taskbar-edge` | dark glass | Taskbar. |
 
 Two themes ship: `aero` (default, translucent) and `vista-basic` (opaque, no
-blur). The Basic theme is a thin override — it imports `../aero/index.scss` and
+blur). The Basic theme is a thin override: it imports `../aero/index.scss` and
 then overrides `_variables.scss`, `_window.scss` and `_taskbar.scss`. To add
 your own, create `themes/<name>/index.scss` the same way and give it a build
 target in `build.js`.
@@ -382,14 +382,14 @@ CI (`.github/workflows/ci.yml`) runs the build on pushes and pull requests.
 
 ### Architecture
 
-- `gui/` — theme-agnostic component structure and the custom-property
+- `gui/`: theme-agnostic component structure and the custom-property
   contract. `gui/index.scss` imports the partials.
-- `themes/aero/` — the Vista skin: imports `gui/index.scss`, then overrides
+- `themes/aero/`: the Vista skin. It imports `gui/index.scss`, then overrides
   variables and component partials. This is where nearly all visuals live.
-- `docs/` — an EJS doc site. `build.js` renders `docs/index.html.ejs` into
+- `docs/`: an EJS doc site. `build.js` renders `docs/index.html.ejs` into
   `dist/index.html` using an `example()` helper (dedent + highlight.js +
   magic `[[ ]]` brackets for markup that shouldn't appear in the code sample).
-- `build.js` — a small PostCSS pipeline:
+- `build.js`, a small PostCSS pipeline:
   `postcss-import` → `postcss-nested` → a custom `svg-load()` inliner →
   `autoprefixer`. Output is intentionally **unminified** so the stylesheet is
   readable.
@@ -405,7 +405,7 @@ CI (`.github/workflows/ci.yml`) runs the build on pushes and pull requests.
   `currentColor`).
 - **Prefer custom properties** over hardcoded colors so the component stays
   themeable.
-- **Keep markup stable** — changing a class or required structure is a breaking
+- **Keep markup stable:** changing a class or required structure is a breaking
   change for 98.css / XP.css users.
 - Scoping note: `.title-bar-controls button`, `.toolbar button`,
   `.taskbar .taskbar-button`, `[role="menu"] button` etc. intentionally

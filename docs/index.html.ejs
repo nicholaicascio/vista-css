@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vista.css — a Windows Vista Aero design system</title>
+    <title>vista.css, a Windows Vista Aero design system</title>
     <link rel="stylesheet" href="aurora.css?v=<%= cacheBust %>" />
     <link id="theme-link" rel="stylesheet" href="Vista.css?v=<%= cacheBust %>" />
     <link rel="stylesheet" href="docs.css?v=<%= cacheBust %>" />
@@ -14,7 +14,7 @@
         <h1>vista.css</h1>
         <p class="docs-tagline">
           A design system for building faithful recreations of the Windows Vista
-          Aero interface. No JavaScript — just semantic HTML and one stylesheet.
+          Aero interface. No JavaScript, just semantic HTML and one stylesheet.
         </p>
         <pre
           class="docs-install"
@@ -31,7 +31,7 @@
         <h2>Window</h2>
         <p>
           The frame is translucent Aero glass: it blurs the page behind it, so
-          it needs something — anything — to sit on. The title bar carries the
+          it needs something, anything, to sit on. The title bar carries the
           window controls; the client area (<code>.window-body</code>) stays
           opaque, exactly as Vista rendered it.
         </p>
@@ -156,7 +156,7 @@
         <h2>Checkboxes and radios</h2>
         <p>
           The real input is hidden and the adjacent <code>&lt;label&gt;</code>
-          draws the control, exactly like 98.css and XP.css — so the same markup
+          draws the control, exactly like 98.css and XP.css, so the same markup
           works unchanged.
         </p>
         <%- example(`
@@ -322,7 +322,7 @@
         <h2>Menus</h2>
         <p>
           A menu bar (<code>role="menubar"</code>) and dropdowns
-          (<code>role="menu"</code>) with no JavaScript — submenus open on focus,
+          (<code>role="menu"</code>) with no JavaScript: submenus open on focus,
           or on hover when the root has <code>can-hover</code>. Use
           <code>has-divider</code> for a separator, <code>aria-disabled</code>
           to disable an item, and a <code>&lt;span&gt;</code> for a shortcut.
@@ -556,7 +556,7 @@
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
           current browser. The frame is transparent, so place windows over a
-          background — a photo, gradient, or the window of another app.
+          background: a photo, gradient, or the window of another app.
           <code>autoprefixer</code> adds the <code>-webkit-</code> prefix at
           build time.
         </p>
@@ -565,7 +565,7 @@
       <section class="docs-section">
         <h2>Roadmap</h2>
         <p>
-          A second theme ships as <code>dist/Vista-Basic.css</code> — the opaque,
+          A second theme ships as <code>dist/Vista-Basic.css</code>, the opaque,
           composition-off look. Use the toggle at the top of the page to preview
           it.
         </p>

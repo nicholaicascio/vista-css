@@ -46,7 +46,7 @@ Or install it:
 npm install vista.css
 ```
 
-The built file lives at `dist/Vista.css`. Publishing to npm is optional — you
+The built file lives at `dist/Vista.css`. Publishing to npm is optional; you
 can also drop the file in directly or load it from a jsDelivr GitHub URL.
 
 ## How the glass works
@@ -89,8 +89,8 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 
 Two themes ship today, both driven by the same custom properties:
 
-- `dist/Vista.css` — **Aero** (default). Translucent glass frame.
-- `dist/Vista-Basic.css` — **Vista Basic**. Opaque frame, solid title bar, no
+- `dist/Vista.css`: **Aero**, the default. Translucent glass frame.
+- `dist/Vista-Basic.css`: **Vista Basic**. Opaque frame, solid title bar, no
   blur; for when you can't rely on `backdrop-filter`.
 
 ```html
@@ -102,11 +102,11 @@ overriding the variables and component partials.
 
 ## Reference
 
-- [`AGENTS.md`](./AGENTS.md) — the full component, markup and theming
+- [`AGENTS.md`](./AGENTS.md): the full component, markup and theming
   reference (handy for AI agents).
-- [`components.json`](./components.json) — machine-readable manifest with
+- [`components.json`](./components.json): machine-readable manifest with
   copy-paste markup per component.
-- Docs site — [nicholaicascio.github.io/vista-css](https://nicholaicascio.github.io/vista-css/)
+- Docs site: [nicholaicascio.github.io/vista-css](https://nicholaicascio.github.io/vista-css/)
 
 ## Developing
 

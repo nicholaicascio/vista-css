@@ -1,6 +1,6 @@
 # vista.css
 
-> A Windows Vista "Aero" design system in pure CSS — translucent glass windows,
+> A Windows Vista "Aero" design system in pure CSS: translucent glass windows,
 > glossy controls, Segoe UI. No JavaScript. Markup-compatible with 98.css and
 > XP.css.
 
@@ -53,8 +53,8 @@ data URIs and no bundled fonts. The window frame and taskbar are translucent
 
 ## Themes
 
-- `dist/Vista.css` — Aero (default): translucent glass frame.
-- `dist/Vista-Basic.css` — Vista Basic: opaque frame, solid title bar, no blur.
+- `dist/Vista.css`: Aero, the default. Translucent glass frame.
+- `dist/Vista-Basic.css`: Vista Basic. Opaque frame, solid title bar, no blur.
 
 ## Theming
 
