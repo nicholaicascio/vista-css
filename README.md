@@ -133,6 +133,4 @@ Inspired by and in the spirit of:
 - [XP.css](https://github.com/botoxparty/XP.css) by Adam Hammad
 - [7.css](https://github.com/khang-nd/7.css) by Khang Nguyen Duy (khang-nd)
 
-All three are MIT licensed. The Aero-era controls in particular — tabs, menus,
-tree view, progress bar, scrollbars and the list view — follow 7.css's
-conventions. vista.css is MIT too.
+All three are MIT licensed, vista.css is too.
