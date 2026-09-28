@@ -1,5 +1,182 @@
 /*-------------------------------------------*\
     Forms — Aero
 
-    Scheduled for M3.
+    White beveled text fields with a blue focus glow, a glossy combobox, the
+    Aero checkbox and radio (drawn on the adjacent label — see gui/_forms.scss)
+    and a glossy slider thumb.
 \*-------------------------------------------*/
+
+label,
+select,
+input,
+textarea,
+option {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------------------- *\
+    Text fields and textareas
+\* ------------------------------------------- */
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"] {
+  color: var(--text);
+  background-color: var(--field-bg);
+  border: 1px solid var(--field-border);
+  border-radius: 2px;
+  transition: border-color 300ms ease, box-shadow 150ms ease;
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--field-border-hover);
+  }
+
+  &:focus {
+    border-color: var(--field-border-focus);
+    box-shadow: 0 0 4px var(--field-focus-glow);
+  }
+
+  &:disabled {
+    color: var(--button-text-disabled);
+    background-color: var(--surface);
+    border-color: var(--control-border-disabled);
+  }
+}
+
+/* ------------------------------------------- *\
+    Select (combobox)
+\* ------------------------------------------- */
+
+select {
+  color: var(--text);
+  background-color: var(--field-bg);
+  border: 1px solid var(--field-border);
+  border-radius: 2px;
+  padding-right: 24px;
+  background-image: svg-load("./icon/dropdown.svg"),
+    linear-gradient(var(--combo-separator), var(--combo-separator)),
+    var(--combo-button-bg);
+  background-repeat: no-repeat;
+  background-size: 9px 9px, 1px 100%, 17px 100%;
+  background-position: right 4px center, right 17px center, right center;
+  transition: border-color 300ms ease, box-shadow 150ms ease;
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--field-border-hover);
+    background-image: svg-load("./icon/dropdown-hover.svg"),
+      linear-gradient(var(--combo-separator), var(--combo-separator)),
+      var(--combo-button-bg-hover);
+  }
+
+  &:focus {
+    border-color: var(--field-border-focus);
+    box-shadow: 0 0 4px var(--field-focus-glow);
+  }
+
+  &:disabled {
+    color: var(--button-text-disabled);
+    border-color: var(--control-border-disabled);
+    background-color: var(--surface);
+  }
+}
+
+/* ------------------------------------------- *\
+    Checkbox and radio
+\* ------------------------------------------- */
+
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+  background-color: var(--control-box-bg);
+  border: 1px solid var(--control-box-border);
+  box-shadow:
+    inset 0 0 0 1px #f4f4f4,
+    inset 1px 1px 0 1px #aeaeae,
+    inset -1px -1px 0 1px #dddddd,
+    inset 3px 3px 6px #cccccc;
+  transition: background-color 200ms ease, border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+input[type="checkbox"]:not(:disabled) + label:hover::before,
+input[type="radio"]:not(:disabled) + label:hover::before {
+  background-color: var(--control-box-bg-hover);
+  border-color: var(--control-box-border-hover);
+  box-shadow:
+    inset 0 0 0 1px #def9fa,
+    inset 1px 1px 0 1px #79c6f9,
+    inset -1px -1px 0 1px #c6e9fc,
+    inset 3px 3px 6px #b1dffd;
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-image: svg-load("./icon/checkmark.svg");
+}
+
+input[type="radio"]:checked + label::before {
+  background-image: svg-load("./icon/radio-dot.svg");
+}
+
+input[type="checkbox"]:focus-visible + label::before,
+input[type="radio"]:focus-visible + label::before {
+  border-color: var(--control-box-border-hover);
+  box-shadow: 0 0 4px var(--field-focus-glow);
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+  color: var(--button-text-disabled);
+}
+
+input[type="checkbox"]:disabled + label::before,
+input[type="radio"]:disabled + label::before {
+  background-color: var(--button-face-disabled);
+  border-color: var(--control-border-disabled);
+  box-shadow: none;
+}
+
+/* ------------------------------------------- *\
+    Range slider
+\* ------------------------------------------- */
+
+input[type="range"] {
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 18px;
+    background: svg-load("./icon/slider-thumb.svg");
+    transform: translateY(-7px);
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.18));
+  }
+
+  &::-moz-range-thumb {
+    width: 10px;
+    height: 18px;
+    border: 0;
+    border-radius: 0;
+    background: svg-load("./icon/slider-thumb.svg");
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.18));
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    box-sizing: border-box;
+    background: var(--surface);
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 1px #999999, inset -1px 0 #999999, 0 1px #ffffff;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    box-sizing: border-box;
+    background: var(--surface);
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 1px #999999, inset -1px 0 #999999, 0 1px #ffffff;
+  }
+}

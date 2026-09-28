@@ -1,6 +1,107 @@
 /*-------------------------------------------*\
-    Forms
+    Forms (structural base)
 
-    Text inputs, textareas, selects, checkboxes, radios and ranges.
-    Scheduled for M3.
+    Checkboxes and radios hide the real input and let the adjacent <label>
+    draw the control, so the markup stays identical to 98.css / XP.css:
+
+        <input id="x" type="checkbox" /> <label for="x">Label</label>
+
+    Visual styling lives in themes/aero/_forms.scss.
 \*-------------------------------------------*/
+
+label {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size);
+}
+
+input,
+select,
+textarea,
+option {
+  font-family: inherit;
+  font-size: var(--font-size);
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"] {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  padding: 3px 5px;
+  resize: vertical;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"] {
+  height: 23px;
+  padding: 3px 5px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  opacity: 0;
+
+  + label::before {
+    content: "";
+    display: inline-block;
+    flex: none;
+    box-sizing: border-box;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    margin-right: var(--control-label-spacing);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+input[type="radio"] + label::before {
+  width: var(--radio-size);
+  height: var(--radio-size);
+  border-radius: 50%;
+}
+
+/* A row of related fields, as used throughout the 98.css / XP.css docs. */
+.field-row {
+  display: flex;
+  align-items: center;
+  column-gap: var(--grouped-element-spacing);
+}

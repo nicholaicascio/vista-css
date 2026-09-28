@@ -70,8 +70,8 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 | Title bar | `.title-bar`, `.title-bar-text` | ✅ M2 |
 | Window controls | `.title-bar-controls button[aria-label="Minimize\|Maximize\|Restore\|Help\|Close"]` | ✅ M2 |
 | Status bar | `.status-bar`, `.status-bar-field` | ✅ M2 |
-| Buttons | `button` | 🚧 M3 |
-| Form controls | `input`, `textarea`, `select`, `input[type=checkbox\|radio\|range]` | 🚧 M3 |
+| Buttons | `button`, `.default` | ✅ M3 |
+| Form controls | `input`, `textarea`, `select`, `input[type=checkbox\|radio\|range]`, `.field-row` | ✅ M3 |
 | Tabs / group box / tree view | `.tabs`, `.group-box`, `.tree-view` | 🚧 M4 |
 | Progress bar / scrollbars | `.progress-bar`, `::-webkit-scrollbar` | 🚧 M4 |
 | Menus / toolbars / balloon tooltips | `.menu-bar`, `.toolbar`, `.tooltip` | 🚧 M5 |

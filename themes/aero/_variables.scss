@@ -61,4 +61,64 @@
   /* Status bar */
   --status-bar-bg: rgba(255, 255, 255, 0.2);
   --status-field-bg: rgba(255, 255, 255, 0.35);
+
+  /* Buttons */
+  --button-text: #222222;
+  --button-text-disabled: #838383;
+  --button-border: #8e8f8f;
+  --button-border-hover: #3c7fb1;
+  --button-border-active: #6d91ab;
+  --button-border-focus: #5586a3;
+  --button-border-disabled: #adb2b5;
+  --button-face-disabled: #f4f4f4;
+  --button-glow: rgba(120, 195, 255, 0.9);
+  --button-focus-glow: rgba(52, 222, 255, 0.85);
+  --button-bg: linear-gradient(
+    180deg,
+    #f2f2f2 45%,
+    #ebebeb 45%,
+    #cfcfcf 100%
+  );
+  --button-bg-hover: linear-gradient(
+    180deg,
+    #eaf6fd 45%,
+    #bee6fd 45%,
+    #a7d9f5 100%
+  );
+  --button-bg-active: linear-gradient(
+    180deg,
+    #e5f4fc 0%,
+    #c4e5f6 30%,
+    #98d1ef 50%,
+    #68b3db 100%
+  );
+
+  /* Fields */
+  --field-bg: #ffffff;
+  --field-border: #7f9db9;
+  --field-border-hover: #5794bf;
+  --field-border-focus: #3d7bad;
+  --field-focus-glow: rgba(90, 170, 240, 0.55);
+  --combo-button-bg: linear-gradient(
+    180deg,
+    #fdfdfd 0%,
+    #f1f1f1 45%,
+    #e6e6e6 50%,
+    #dcdcdc 100%
+  );
+  --combo-button-bg-hover: linear-gradient(
+    180deg,
+    #f2fbff 0%,
+    #dff3fd 45%,
+    #cbe9fb 50%,
+    #b7dcf5 100%
+  );
+  --combo-separator: #b9c8d8;
+
+  /* Checkbox / radio */
+  --control-box-bg: #f6f6f6;
+  --control-box-bg-hover: #e9f7fe;
+  --control-box-border: #8e8f8f;
+  --control-box-border-hover: #3c7fb1;
+  --control-border-disabled: #b1b1b1;
 }

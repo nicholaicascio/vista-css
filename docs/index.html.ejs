@@ -100,6 +100,93 @@
       </section>
 
       <section class="docs-section">
+        <h2>Buttons</h2>
+        <p>
+          Glossy Aero push buttons. Hover lights them up; <code>.default</code>
+          (or keyboard focus) adds the signature aqua glow.
+        </p>
+        <%- example(`
+          <div class="field-row">
+            <button>OK</button>
+            <button class="default">Apply</button>
+            <button disabled>Disabled</button>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Text fields</h2>
+        <p>
+          Text inputs and textareas get a white field, a hairline border, and a
+          blue glow while focused.
+        </p>
+        <%- example(`
+          <div class="field-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" value="Nick" />
+          </div>
+          <div class="field-row" style="margin-top: 8px; align-items: flex-start">
+            <label for="notes">Notes</label>
+            <textarea id="notes" rows="3" style="width: 220px">Hello, Aero!</textarea>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Combobox</h2>
+        <p>A glossy Aero dropdown with its own button on the right.</p>
+        <%- example(`
+          <div class="field-row">
+            <label for="theme">Color scheme</label>
+            <select id="theme">
+              <option>Windows Aero</option>
+              <option>Windows Vista Basic</option>
+              <option>Windows Classic</option>
+            </select>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Checkboxes and radios</h2>
+        <p>
+          The real input is hidden and the adjacent <code>&lt;label&gt;</code>
+          draws the control, exactly like 98.css and XP.css — so the same markup
+          works unchanged.
+        </p>
+        <%- example(`
+          <div>
+            <div class="field-row">
+              <input id="cb1" type="checkbox" checked />
+              <label for="cb1">Show hidden files</label>
+            </div>
+            <div class="field-row" style="margin-top: 6px">
+              <input id="cb2" type="checkbox" />
+              <label for="cb2">Remember this setting</label>
+            </div>
+            <div class="field-row" style="margin-top: 6px">
+              <input id="rb1" type="radio" name="scheme" checked />
+              <label for="rb1">Windows Aero</label>
+            </div>
+            <div class="field-row" style="margin-top: 6px">
+              <input id="rb2" type="radio" name="scheme" />
+              <label for="rb2">Windows Vista Basic</label>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Slider</h2>
+        <p>A glossy Aero thumb on a recessed track.</p>
+        <%- example(`
+          <div style="width: 240px">
+            <input type="range" min="0" max="100" value="40" />
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -113,9 +200,9 @@
       <section class="docs-section">
         <h2>Roadmap</h2>
         <p>
-          Buttons and form controls (M3) · tabs, group boxes, tree views,
-          progress bars and scrollbars (M4) · menus, toolbars and balloon
-          tooltips (M5) · the Aero taskbar and Start orb (M6).
+          Tabs, group boxes, tree views, progress bars and scrollbars (M4) ·
+          menus, toolbars and balloon tooltips (M5) · the Aero taskbar and
+          Start orb (M6).
         </p>
       </section>
 

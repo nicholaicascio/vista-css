@@ -1,6 +1,56 @@
 /*-------------------------------------------*\
     Buttons — Aero
 
-    Window control buttons live in themes/aero/_window.scss; general Aero push
-    buttons are scheduled for M3.
+    Glossy Aero push buttons: a hard-stop vertical gradient, hairline border,
+    a blue glow on hover and a recessed pressed state. `:focus-visible`,
+    `.focused` and `.default` share the signature aqua focus glow.
 \*-------------------------------------------*/
+
+button {
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+  color: var(--button-text);
+  background-color: transparent;
+  background-image: var(--button-bg);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+  transition: border-color 300ms ease, box-shadow 200ms ease;
+
+  &:not(:disabled) {
+    &:hover {
+      border-color: var(--button-border-hover);
+      background-image: var(--button-bg-hover);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+        0 0 5px var(--button-glow);
+    }
+
+    &:active,
+    &.active {
+      border-color: var(--button-border-active);
+      background-image: var(--button-bg-active);
+      box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &:focus-visible,
+  &.focused,
+  &.default {
+    outline: none;
+    border-color: var(--button-border-focus);
+    box-shadow: inset 0 0 3px 1px var(--button-focus-glow);
+  }
+
+  &.default:hover:not(:disabled) {
+    box-shadow:
+      inset 0 0 3px 1px var(--button-focus-glow),
+      0 0 6px var(--button-glow);
+  }
+
+  &:disabled {
+    color: var(--button-text-disabled);
+    border-color: var(--button-border-disabled);
+    background-color: var(--button-face-disabled);
+    background-image: none;
+    box-shadow: none;
+  }
+}
