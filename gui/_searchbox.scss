@@ -1,0 +1,26 @@
+/*-------------------------------------------*\
+    Search box (structural base)
+
+    A plain <input type="search"> works on its own; wrap it with a button in a
+    `.searchbox` for the button-triggered variant. Visual styling lives in
+    themes/aero/_searchbox.scss.
+\*-------------------------------------------*/
+
+.searchbox {
+  position: relative;
+  display: inline-block;
+}
+
+.searchbox input[type="search"] {
+  padding-right: 32px;
+}
+
+.searchbox button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  min-width: 26px;
+  min-height: 0;
+  padding: 0;
+}

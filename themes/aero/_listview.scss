@@ -1,0 +1,32 @@
+/*-------------------------------------------*\
+    List view / details table — Aero
+\*-------------------------------------------*/
+
+.list-view {
+  font-size: 12px;
+  color: var(--text);
+  border: 1px solid #c0c1cd;
+}
+
+.list-view th {
+  box-sizing: border-box;
+  border: 1px solid #d7d7d7;
+  background: linear-gradient(180deg, #ffffff 45%, #fafafa 45%, #f0f0f0);
+}
+
+.list-view th.highlighted {
+  border-color: #a7d8f5;
+  background: linear-gradient(180deg, #f3f9fc 45%, #e4f0f8 45%, #d9eaf5);
+}
+
+.list-view tbody tr.highlighted {
+  background: var(--menu-highlight-bg);
+}
+
+.list-view td {
+  border-right: 1px solid #eeeeee;
+}
+
+.list-view td:last-child {
+  border-right: none;
+}

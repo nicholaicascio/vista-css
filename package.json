@@ -7,6 +7,8 @@
   "files": [
     "dist/Vista.css",
     "dist/Vista.css.map",
+    "dist/Vista-Basic.css",
+    "dist/Vista-Basic.css.map",
     "dist/GUI.css",
     "dist/GUI.css.map",
     "gui",
@@ -21,7 +23,6 @@
     "build": "node build.js",
     "start": "node server.js",
     "prepublishOnly": "npm run build",
-    "deploy:docs": "npm run build && gh-pages -d dist",
     "release": "npm publish"
   },
   "repository": {
@@ -59,7 +60,6 @@
     "chokidar": "^5.0.0",
     "dedent": "^1.7.2",
     "ejs": "^6.0.1",
-    "gh-pages": "^6.3.0",
     "highlight.js": "^11.12.0",
     "live-server": "^1.2.2",
     "postcss": "^8.5.28",

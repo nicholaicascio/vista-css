@@ -1,0 +1,47 @@
+/*-------------------------------------------*\
+    Variables — Vista Basic
+
+    Overrides the Aero defaults: opaque surfaces, a solid steel-blue title bar,
+    no glass.
+\*-------------------------------------------*/
+
+:root {
+  /* Opaque surfaces */
+  --glass-tint: #f0f0f0;
+  --glass-tint-strong: #e8e8e8;
+  --glass-blur: 0px;
+  --glass-saturate: 1;
+  --glass-rim: rgba(0, 0, 0, 0.25);
+  --glass-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+
+  /* Solid steel-blue title bar */
+  --title-bar-text: #ffffff;
+  --title-bar-bg: linear-gradient(
+    180deg,
+    #8db4e2 0%,
+    #5b8fd6 45%,
+    #4a7ec4 55%,
+    #3f6fb5 100%
+  );
+  --title-bar-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+
+  /* Opaque window controls */
+  --control-surface: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #eef4fb 48%,
+    #dfeaf7 52%,
+    #cfe0f2 100%
+  );
+  --control-border: rgba(40, 70, 110, 0.55);
+
+  /* Opaque taskbar */
+  --taskbar-bg: linear-gradient(
+    180deg,
+    #4d4d4d 0%,
+    #3a3a3a 8%,
+    #232323 50%,
+    #161616 100%
+  );
+  --taskbar-edge: rgba(255, 255, 255, 0.35);
+}

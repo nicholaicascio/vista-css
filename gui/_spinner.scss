@@ -1,0 +1,26 @@
+/*-------------------------------------------*\
+    Spinner / loader (structural base)
+
+    Markup: <span class="spinner" aria-label="Loading"></span>
+    Add `animate` to spin it. `loader` is an alias. Visual styling lives in
+    themes/aero/_spinner.scss.
+\*-------------------------------------------*/
+
+.spinner,
+.loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+}
+
+.spinner.animate,
+.loader.animate {
+  animation: vista-spin 1s linear infinite;
+}
+
+@keyframes vista-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

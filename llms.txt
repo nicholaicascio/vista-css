@@ -46,6 +46,15 @@ data URIs and no bundled fonts. The window frame and taskbar are translucent
 - Balloon tooltip: `[role=tooltip]`; `.is-top`, `.is-left`, `.is-right`.
 - Taskbar: `.taskbar`, `.start-orb`, `.taskbar-tasks`, `.taskbar-button`,
   `.taskbar-button-icon`, `.taskbar-button-text`, `.taskbar-tray`, `.tray-clock`.
+- List view: `table.list-view`, `.highlighted`, `.indicator` (`.up`),
+  `.has-shadow`.
+- Search box: `input[type=search]`, `.searchbox`.
+- Spinner: `.spinner`, `.loader`, `.animate`.
+
+## Themes
+
+- `dist/Vista.css` — Aero (default): translucent glass frame.
+- `dist/Vista-Basic.css` — Vista Basic: opaque frame, solid title bar, no blur.
 
 ## Theming
 

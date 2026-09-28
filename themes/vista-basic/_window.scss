@@ -1,0 +1,33 @@
+/*-------------------------------------------*\
+    Window — Vista Basic
+
+    The frame is opaque: no backdrop blur, no glass sheen, just a solid border
+    and a solid title bar.
+\*-------------------------------------------*/
+
+.window {
+  padding: 0;
+  border: 1px solid #6d95c8;
+  border-radius: var(--window-radius) var(--window-radius) 0 0;
+  background: var(--glass-tint);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--glass-shadow);
+}
+
+/* No glass sheen in Basic. */
+.window::before {
+  display: none;
+}
+
+.title-bar {
+  background: var(--title-bar-bg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.window-body {
+  border-radius: 0;
+  background: var(--surface);
+}

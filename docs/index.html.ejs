@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vista.css — a Windows Vista Aero design system</title>
     <link rel="stylesheet" href="aurora.css?v=<%= cacheBust %>" />
-    <link rel="stylesheet" href="Vista.css?v=<%= cacheBust %>" />
+    <link id="theme-link" rel="stylesheet" href="Vista.css?v=<%= cacheBust %>" />
     <link rel="stylesheet" href="docs.css?v=<%= cacheBust %>" />
   </head>
   <body>
@@ -20,6 +20,11 @@
           class="docs-install"
         ><code>&lt;link rel="stylesheet" href="https://unpkg.com/vista.css"&gt;</code></pre>
         <p class="docs-version">v<%= version %></p>
+        <button
+          id="theme-toggle"
+          class="docs-theme-toggle"
+          type="button"
+        ></button>
       </header>
 
       <section class="docs-section">
@@ -464,6 +469,89 @@
       </section>
 
       <section class="docs-section">
+        <h2>List view</h2>
+        <p>
+          The Details view, as a styled table: add the <code>list-view</code>
+          class. Sticky gradient headers, an <code>highlighted</code> column or
+          row, and an <code>indicator</code> sort caret (add <code>up</code> to
+          flip it).
+        </p>
+        <%- example(`
+          <div class="window" style="width: 480px">
+            <div class="title-bar">
+              <div class="title-bar-text">Pictures</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="padding: 0">
+              <table class="list-view">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date Taken</th>
+                    <th class="highlighted indicator">Tags</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Toco Toucan</td>
+                    <td>6/24/2005 12:22 PM</td>
+                    <td>Sample; Wildlife</td>
+                    <td>113 KB</td>
+                  </tr>
+                  <tr class="highlighted">
+                    <td>Dock</td>
+                    <td>6/22/2005 8:17 PM</td>
+                    <td>Sample; Ocean</td>
+                    <td>310 KB</td>
+                  </tr>
+                  <tr>
+                    <td>Autumn Leaves</td>
+                    <td>11/4/2005 6:12 PM</td>
+                    <td>Sample; Landscape</td>
+                    <td>270 KB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Search box</h2>
+        <p>
+          A magnifier appears while the field is empty. Wrap the input and a
+          button in a <code>searchbox</code> for the button-triggered variant.
+        </p>
+        <%- example(`
+          <input type="search" placeholder="Search" />
+          <div class="searchbox">
+            <input type="search" placeholder="Search" />
+            <button aria-label="search"></button>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
+        <h2>Spinner</h2>
+        <p>
+          A raster-free loading ring: <code>spinner</code> or
+          <code>loader</code>, plus <code>animate</code> to spin it.
+        </p>
+        <%- example(`
+          <div style="display: flex; align-items: center; gap: 18px">
+            <span class="spinner" aria-label="Loading"></span>
+            <span class="loader animate" aria-label="Processing"></span>
+          </div>
+        `) %>
+      </section>
+
+      <section class="docs-section">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -477,8 +565,9 @@
       <section class="docs-section">
         <h2>Roadmap</h2>
         <p>
-          All components are implemented. M7 covers the README, an agent-facing
-          reference and publishing.
+          A second theme ships as <code>dist/Vista-Basic.css</code> — the opaque,
+          composition-off look. Use the toggle at the top of the page to preview
+          it.
         </p>
       </section>
 
@@ -490,5 +579,6 @@
         </p>
       </footer>
     </main>
+    <script src="script.js?v=<%= cacheBust %>"></script>
   </body>
 </html>

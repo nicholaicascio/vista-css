@@ -159,6 +159,12 @@ async function build() {
   });
 
   await buildCSS({
+    from: "themes/vista-basic/index.scss",
+    to: "dist/Vista-Basic.css",
+    banner: `/*! Vista-Basic.css v${version} - ${homepage} */`,
+  });
+
+  await buildCSS({
     from: "gui/index.scss",
     to: "dist/GUI.css",
     banner: `/*! GUI.css v${version} - ${homepage} */`,
@@ -166,7 +172,9 @@ async function build() {
 
   await buildDocs();
 
-  console.log("Built dist/Vista.css, dist/GUI.css and dist/index.html");
+  console.log(
+    "Built dist/Vista.css, dist/Vista-Basic.css, dist/GUI.css and dist/index.html"
+  );
 }
 
 if (require.main === module) {

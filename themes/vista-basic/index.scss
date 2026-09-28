@@ -1,0 +1,12 @@
+/**
+ * Vista Basic theme for vista.css
+ *
+ * The opaque, composition-off Vista look: solid steel-blue title bars and no
+ * glass blur. A thin override of the Aero theme — it pulls in the full Aero
+ * skin and then re-skins the frame and taskbar.
+ */
+
+@import "../aero/index.scss";
+@import "_variables.scss";
+@import "_window.scss";
+@import "_taskbar.scss";

@@ -55,6 +55,9 @@ theme-less core (structure + variable defaults only).
 | Toolbar | `.toolbar`, `.toolbar-divider`, `button[aria-pressed]` | |
 | Balloon | `[role=tooltip]`, `.is-top`, `.is-left`, `.is-right` | |
 | Taskbar | `.taskbar`, `.start-orb`, `.taskbar-tasks`, `.taskbar-button`, `.taskbar-button-icon`, `.taskbar-button-text`, `.taskbar-tray`, `.tray-clock` | |
+| List view | `table.list-view`, `.highlighted`, `.indicator` (`.up`), `.has-shadow` | |
+| Search box | `input[type=search]`, `.searchbox` | |
+| Spinner | `.spinner`, `.loader`, `.animate` | |
 
 A machine-readable version of this table, with copy-paste markup per component,
 lives in [`components.json`](./components.json).
@@ -289,6 +292,52 @@ Default tail points up (balloon below the control); `.is-top` points it down;
 </div>
 ```
 
+### List view
+
+The Details view, as a table. Add the `list-view` class to a `<table>`:
+
+```html
+<table class="list-view">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="highlighted indicator">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="highlighted"><td>Dock</td><td>Sample; Ocean</td></tr>
+  </tbody>
+</table>
+```
+
+`.highlighted` on a `<th>` or `<tr>` gives the blue selection gradient.
+`.indicator` adds the sort caret; add `.up` to flip it. `.has-shadow` adds a
+drop shadow. (It is opt-in so ordinary content tables are never touched.)
+
+### Search box
+
+`input[type="search"]` shows a magnifier while it is empty. For a
+button-triggered search, wrap the input and a button in `.searchbox`:
+
+```html
+<input type="search" placeholder="Search" />
+
+<div class="searchbox">
+  <input type="search" placeholder="Search" />
+  <button aria-label="search"></button>
+</div>
+```
+
+### Spinner
+
+A raster-free loading ring. `loader` is an alias for `spinner`; add `animate`
+to rotate it.
+
+```html
+<span class="spinner" aria-label="Loading"></span>
+<span class="loader animate" aria-label="Processing"></span>
+```
+
 ## Theming
 
 Everything is driven by custom properties on `:root`. Override them to
@@ -311,19 +360,24 @@ Key knobs (see `themes/aero/_variables.scss` for the full set):
 | `--menu-gutter` / `--menu-highlight-border` | `28px` / `#aaddfa` | Menus. |
 | `--taskbar-bg` / `--taskbar-edge` | dark glass | Taskbar. |
 
-There is only one theme today (`aero`). To add another, create
-`themes/<name>/index.scss` that imports `../../gui/index.scss` and then
-overrides `_variables.scss` plus any component partials.
+Two themes ship: `aero` (default, translucent) and `vista-basic` (opaque, no
+blur). The Basic theme is a thin override — it imports `../aero/index.scss` and
+then overrides `_variables.scss`, `_window.scss` and `_taskbar.scss`. To add
+your own, create `themes/<name>/index.scss` the same way and give it a build
+target in `build.js`.
 
 ## Working on the project
 
 ```
 npm install
-npm run build      # writes dist/Vista.css, dist/GUI.css and dist/index.html
+npm run build      # dist/Vista.css, dist/Vista-Basic.css, dist/GUI.css, dist/index.html
 npm start          # watch + live-reloading docs at http://localhost:8080
-npm run deploy:docs  # publish the docs to a gh-pages branch
 npm publish        # builds via prepublishOnly, then publishes
 ```
+
+CI (`.github/workflows/ci.yml`) runs the build on pushes and pull requests.
+`.github/workflows/docs.yml` deploys `dist/` to GitHub Pages on pushes to
+`master` (set Settings → Pages → Source → GitHub Actions).
 
 ### Architecture
 

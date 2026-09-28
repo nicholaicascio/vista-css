@@ -162,6 +162,28 @@
         "tray-clock"
       ],
       "markup": "<div class=\"taskbar\">\n  <button class=\"start-orb\" aria-label=\"Start\"></button>\n  <div class=\"taskbar-tasks\">\n    <button class=\"taskbar-button\" aria-pressed=\"true\">\n      <span class=\"taskbar-button-icon\"></span>\n      <span class=\"taskbar-button-text\">Windows Explorer</span>\n    </button>\n  </div>\n  <div class=\"taskbar-tray\">\n    <div class=\"tray-clock\">\n      <span>8:00 PM</span>\n      <span>9/27/2026</span>\n    </div>\n  </div>\n</div>"
+    },
+    {
+      "id": "list-view",
+      "name": "List view",
+      "summary": "The Details view, as a styled table. Opt-in via the list-view class so ordinary content tables are never touched.",
+      "classes": ["list-view", "highlighted", "indicator", "up", "has-shadow"],
+      "markup": "<table class=\"list-view\">\n  <thead>\n    <tr>\n      <th>Name</th>\n      <th class=\"highlighted indicator\">Tags</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr class=\"highlighted\">\n      <td>Dock</td>\n      <td>Sample; Ocean</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "id": "search-box",
+      "name": "Search box",
+      "summary": "input[type=search] shows a magnifier while it is empty. Wrap the input and a button in .searchbox for a button-triggered search.",
+      "classes": ["searchbox"],
+      "selectors": ["input[type=search]"],
+      "markup": "<input type=\"search\" placeholder=\"Search\" />\n\n<div class=\"searchbox\">\n  <input type=\"search\" placeholder=\"Search\" />\n  <button aria-label=\"search\"></button>\n</div>"
+    },
+    {
+      "id": "spinner",
+      "name": "Spinner",
+      "summary": "A raster-free loading ring. loader is an alias for spinner; add animate to rotate it.",
+      "classes": ["spinner", "loader", "animate"],
+      "markup": "<span class=\"spinner\" aria-label=\"Loading\"></span>\n<span class=\"loader animate\" aria-label=\"Processing\"></span>"
     }
   ]
 }

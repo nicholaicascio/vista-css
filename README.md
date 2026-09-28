@@ -81,6 +81,24 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 | Toolbar | `.toolbar`, `.toolbar-divider` |
 | Balloon tooltip | `[role=tooltip]` |
 | Taskbar | `.taskbar`, `.start-orb`, `.taskbar-button`, `.tray-clock` |
+| List view | `table.list-view`, `.highlighted`, `.indicator` |
+| Search box | `input[type=search]`, `.searchbox` |
+| Spinner | `.spinner`, `.loader`, `.animate` |
+
+## Themes
+
+Two themes ship today, both driven by the same custom properties:
+
+- `dist/Vista.css` — **Aero** (default). Translucent glass frame.
+- `dist/Vista-Basic.css` — **Vista Basic**. Opaque frame, solid title bar, no
+  blur; for when you can't rely on `backdrop-filter`.
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/vista.css/dist/Vista-Basic.css" />
+```
+
+Add your own under `themes/<name>/`, importing `../../gui/index.scss` and then
+overriding the variables and component partials.
 
 ## Reference
 
@@ -94,13 +112,18 @@ The client area (`.window-body`) stays opaque, exactly as Vista rendered it.
 
 ```
 npm install
-npm run build      # writes dist/Vista.css, dist/GUI.css and dist/index.html
+npm run build      # dist/Vista.css, dist/Vista-Basic.css, dist/GUI.css, dist/index.html
 npm start          # watch + live-reloading docs at http://localhost:8080
 ```
 
 Sources live in `gui/` (theme-agnostic structure and the custom-property
-contract) and `themes/aero/` (the Vista skin). `build.js` is a small PostCSS
-pipeline; `svg-load("./icon/x.svg")` inlines an icon as a data URI.
+contract) and `themes/` (the skins). `build.js` is a small PostCSS pipeline;
+`svg-load("./icon/x.svg")` inlines an icon as a data URI.
+
+Pushing to `master` builds and deploys the docs site to GitHub Pages via
+`.github/workflows/docs.yml`. Set **Settings → Pages → Source → GitHub Actions**
+once; `.github/workflows/ci.yml` just runs the build on pushes and pull
+requests.
 
 ## Acknowledgements
 

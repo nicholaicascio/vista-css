@@ -1,0 +1,65 @@
+/*-------------------------------------------*\
+    List view / details table (structural base)
+
+    Markup: <table class="list-view"> ... </table>
+
+    Visual styling lives in themes/aero/_listview.scss.
+\*-------------------------------------------*/
+
+.list-view {
+  background-color: #ffffff;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.list-view th,
+.list-view td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-view th {
+  position: sticky;
+  top: 0;
+  height: 22px;
+  padding: 0 8px;
+  font-weight: 400;
+  text-align: left;
+  cursor: default;
+}
+
+.list-view td {
+  height: 14px;
+  padding: 2px 8px;
+}
+
+.list-view tbody tr {
+  cursor: default;
+}
+
+/* Column header sort caret */
+.list-view th.indicator {
+  position: relative;
+}
+
+.list-view th.indicator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 6px;
+  height: 5px;
+  background: linear-gradient(
+    to bottom right,
+    #667f91 45%,
+    #90c1e2 65%,
+    #cce3f2
+  );
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+}
+
+.list-view th.indicator.up::before {
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}

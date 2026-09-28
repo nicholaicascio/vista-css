@@ -1,0 +1,33 @@
+/*-------------------------------------------*\
+    Search box — Aero
+
+    A magnifier appears while the field is empty. The `.searchbox` variant uses
+    a real button instead.
+\*-------------------------------------------*/
+
+input[type="search"] {
+  min-width: 187px;
+}
+
+input[type="search"]:placeholder-shown {
+  background-image: svg-load("./icon/search.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+  background-size: 14px 14px;
+}
+
+input[type="search"]::placeholder {
+  font-style: italic;
+}
+
+.searchbox input[type="search"]:placeholder-shown {
+  background-image: none;
+}
+
+.searchbox button[aria-label="search"] {
+  border-radius: 0 2px 2px 0;
+  background-image: svg-load("./icon/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
