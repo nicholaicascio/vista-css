@@ -9,6 +9,61 @@
     <link rel="stylesheet" href="docs.css?v=<%= cacheBust %>" />
   </head>
   <body>
+<%
+  const nav = [
+    ["Window", [
+      ["window", "Window"],
+      ["window-controls", "Window controls"],
+      ["status-bar", "Status bar"],
+    ]],
+    ["Controls", [
+      ["buttons", "Buttons"],
+      ["text-fields", "Text fields"],
+      ["combobox", "Combobox"],
+      ["checkboxes-and-radios", "Checkboxes and radios"],
+      ["slider", "Slider"],
+    ]],
+    ["Containers", [
+      ["tabs", "Tabs"],
+      ["group-box", "Group box"],
+      ["tree-view", "Tree view"],
+      ["progress-bar", "Progress bar"],
+      ["scrollbar", "Scrollbar"],
+    ]],
+    ["Shell & overlays", [
+      ["menus", "Menus"],
+      ["toolbar", "Toolbar"],
+      ["balloon-tooltip", "Balloon tooltip"],
+      ["taskbar", "Taskbar"],
+    ]],
+    ["Data & feedback", [
+      ["list-view", "List view"],
+      ["search-box", "Search box"],
+      ["spinner", "Spinner"],
+    ]],
+    ["About", [
+      ["requirements", "Requirements"],
+      ["roadmap", "Roadmap"],
+    ]],
+  ];
+%>
+    <aside class="docs-nav" aria-label="Components">
+      <ul class="tree-view has-container has-collapse-button has-scrollbar">
+        <% nav.forEach(function (group) { %>
+        <li>
+          <details open>
+            <summary><%= group[0] %></summary>
+            <ul>
+              <% group[1].forEach(function (item) { %>
+              <li><a href="#<%= item[0] %>"><%= item[1] %></a></li>
+              <% }); %>
+            </ul>
+          </details>
+        </li>
+        <% }); %>
+      </ul>
+    </aside>
+
     <main class="docs-page">
       <header class="docs-header">
         <h1>vista.css</h1>
@@ -27,7 +82,7 @@
         ></button>
       </header>
 
-      <section class="docs-section">
+      <section class="docs-section" id="window">
         <h2>Window</h2>
         <p>
           The frame is translucent Aero glass: it blurs the page behind it, so
@@ -52,7 +107,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="window-controls">
         <h2>Window controls</h2>
         <p>
           Control buttons are keyed off their <code>aria-label</code>, so they
@@ -77,7 +132,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="status-bar">
         <h2>Status bar</h2>
         <p>
           A row of glass fields pinned to the bottom of the window.
@@ -104,7 +159,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="buttons">
         <h2>Buttons</h2>
         <p>
           Glossy Aero push buttons. Hover lights them up; <code>.default</code>
@@ -119,7 +174,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="text-fields">
         <h2>Text fields</h2>
         <p>
           Text inputs and textareas get a white field, a hairline border, and a
@@ -137,7 +192,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="combobox">
         <h2>Combobox</h2>
         <p>A glossy Aero dropdown with its own button on the right.</p>
         <%- example(`
@@ -152,7 +207,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="checkboxes-and-radios">
         <h2>Checkboxes and radios</h2>
         <p>
           The real input is hidden and the adjacent <code>&lt;label&gt;</code>
@@ -181,7 +236,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="slider">
         <h2>Slider</h2>
         <p>A glossy Aero thumb on a recessed track.</p>
         <%- example(`
@@ -191,7 +246,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="tabs">
         <h2>Tabs</h2>
         <p>
           Inactive tabs use the glossy push-button look; the selected tab goes
@@ -222,7 +277,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="group-box">
         <h2>Group box</h2>
         <p>A rounded hairline frame with the legend cutting through it.</p>
         <%- example(`
@@ -253,7 +308,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="tree-view">
         <h2>Tree view</h2>
         <p>
           Collapsible branches use native <code>&lt;details&gt;</code>, so they
@@ -284,7 +339,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="progress-bar">
         <h2>Progress bar</h2>
         <p>
           The Vista green bar. Give the inner element a width for a determinate
@@ -300,7 +355,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="scrollbar">
         <h2>Scrollbar</h2>
         <p>
           Add <code>has-scrollbar</code> to a scrolling container for the Aero
@@ -318,7 +373,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="menus">
         <h2>Menus</h2>
         <p>
           A menu bar (<code>role="menubar"</code>) and dropdowns
@@ -396,7 +451,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="toolbar">
         <h2>Toolbar</h2>
         <p>Buttons stay flat until you hover them.</p>
         <%- example(`
@@ -423,7 +478,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="balloon-tooltip">
         <h2>Balloon tooltip</h2>
         <p>
           A Vista balloon, complete with tail. Use <code>is-top</code> to point
@@ -436,7 +491,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="taskbar">
         <h2>Taskbar</h2>
         <p>
           The Aero glass taskbar: Start orb, glass task buttons and a tray
@@ -468,7 +523,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="list-view">
         <h2>List view</h2>
         <p>
           The Details view, as a styled table: add the <code>list-view</code>
@@ -522,7 +577,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="search-box">
         <h2>Search box</h2>
         <p>
           A magnifier appears while the field is empty. Wrap the input and a
@@ -537,7 +592,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="spinner">
         <h2>Spinner</h2>
         <p>
           A raster-free loading ring: <code>spinner</code> or
@@ -551,7 +606,7 @@
         `) %>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="requirements">
         <h2>Requirements</h2>
         <p>
           The glass effect uses <code>backdrop-filter</code>, supported by every
@@ -562,7 +617,7 @@
         </p>
       </section>
 
-      <section class="docs-section">
+      <section class="docs-section" id="roadmap">
         <h2>Roadmap</h2>
         <p>
           A second theme ships as <code>dist/Vista-Basic.css</code>, the opaque,

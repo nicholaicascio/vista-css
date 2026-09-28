@@ -190,3 +190,56 @@ body {
   background: rgba(255, 255, 255, 0.12);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* Left navigation ------------------------------------------------------- */
+
+body {
+  padding-left: 264px;
+}
+
+.docs-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 264px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.docs-nav .tree-view {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.docs-nav .tree-view a {
+  display: block;
+}
+
+.docs-nav .tree-view a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.docs-nav .tree-view details > summary {
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.docs-section {
+  scroll-margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-left: 0;
+  }
+
+  .docs-nav {
+    display: none;
+  }
+}
